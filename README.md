@@ -16,13 +16,19 @@ The original netCDF files of the Interactive Atlas dataset may be downloaded fro
 
 ## Global warming levels
 
-- [Python](notebooks/global_warming_levels/global_warming_levels_python.ipynb)
-- [R](notebooks/global_warming_levels/global_warming_levels_R.ipynb)
+- [Python](notebooks/maps_of_change/Maps_of_change_under_global-warming-levels_python.ipynb)
+- [R](notebooks/maps_of_change/Maps_of_change_under_global-warming-levels_R.ipynb)
+
+## Regional aggregation
+
+- [Python](notebooks/regional_aggregation/Regional_aggregation_and_visualization_R.ipynb)
+- [R](notebooks/regional_aggregation/Regional_aggregation_and_visualization_python.ipynb)
 
 ## Global Surface Air Temperature changes in future scenarios
 
-- [Python](notebooks/gsat_scenarios/gsat_scenarios_python.ipynb)
+- [Python](notebooks/time-series_of_change/GSAT-change_time-series_python.ipynb)
 
 ## Performance evaluation
 
-- [Python](notebooks/performance_analysis/hub.ipynb)
+- [Python](notebooks/performance_analysis/analysis.ipynb)
+
