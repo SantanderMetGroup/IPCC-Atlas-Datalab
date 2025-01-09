@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Regional averaging of climate information &#8212; The IPCC AR6 Interactive Atlas Datalab (R)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'regional_aggregation/Regional_aggregation_and_visualization';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Projected climate change signals and uncertainty under global warming levels" href="../maps_of_change/Maps_of_change_under_global-warming-levels.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../getting_started.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">The IPCC AR6 Interactive Atlas Datalab (R)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../getting_started.html">
+                    Getting started
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../maps_of_change/Maps_of_change_under_global-warming-levels.html">Projected climate change signals and uncertainty under global warming levels</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Regional averaging of climate information</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/regional_aggregation/Regional_aggregation_and_visualization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Regional averaging of climate information</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-in-this-notebook">Contents in this notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">1. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">2. Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-of-a-land-sea-mask">3. Application of a land-sea mask</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-regionalized-information">4. Generate regionalized information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#session-info">Session Info</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="regional-averaging-of-climate-information">
+<h1>Regional averaging of climate information<a class="headerlink" href="#regional-averaging-of-climate-information" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>This notebook is a reproducibility example of the IPCC-WGI AR6 Interactive Atlas products. This work is licensed under a <a class="reference external" href="http://creativecommons.org/licenses/by/4.0">Creative Commons Attribution 4.0 International License</a>.</p>
+<p><img alt="Creative Commons License &gt;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></p>
+</div></blockquote>
+<p><strong>M. Iturbide</strong> (Santander Meteorology Group. Instituto de Física de Cantabria, CSIC-UC, Santander, Spain).</p>
+<p>This notebook is a reproducibility example for the <a class="reference external" href="https://interactive-atlas.ipcc.ch/"><strong>IPCC-WGI AR6 Interactive Atlas</strong></a> products.</p>
+<p>This notebook works with the data available in this Hub. In particular, the <strong>IPCC-WGI AR6 Interactive Atlas Dataset</strong>, originally published at <a class="reference external" href="https://digital.csic.es/handle/10261/280324"><strong>DIGITAL.CSIC</strong></a> for the long-term archival, and also available through the <strong><a class="reference external" href="https://cds.climate.copernicus.eu/datasets/projections-climate-atlas?tab=overview">Copernicus Data Store (CDS)</a></strong>.</p>
+<p>Open the <strong><code class="docutils literal notranslate"><span class="pre">Getting_started.ipynb</span></code></strong> for a <strong>description of the available data</strong> and for a quick **introduction to the <strong><a class="reference external" href="https://github.com/SantanderMetGroup/climate4R">climate4R framework</a></strong>, the bundle of R packages used in this notebook.</p>
+<section id="contents-in-this-notebook">
+<h2>Contents in this notebook<a class="headerlink" href="#contents-in-this-notebook" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Libraries</p></li>
+<li><p>Data preparation</p></li>
+<li><p>Application of a land-sea mask</p></li>
+<li><p>Generate regionalized information</p></li>
+</ol>
+<hr class="docutils" />
+<p>Before we start, or at any stage of the notebook, we can customize the plotting area within this notebook as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="c1"># Change plot size </span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="libraries">
+<h2>1. Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">loadeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">transformeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">visualizeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">geoprocessoR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rgdal</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">curl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using libcurl 8.10.1 with OpenSSL/3.3.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-preparation">
+<h2>2. Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<p>The aim of this notebook is to illustrate the operations that can be carried out in <em>climate4R</em> to synthesize climate information through regionalized statistics. These operations can be applied to any <em>climate4R</em> (C4R) grid, containing any type of information. Here, we will demonstrate this using a simple data loading operation to obtain the target C4R grid. For more detailed explanations on data loading, please refer to other notebooks (e.g., <code class="docutils literal notranslate"><span class="pre">getting</span> <span class="pre">started</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../data_inventory.csv&quot;</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">data.paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	1726 obs. of  6 variables:
+ $ location  : chr  &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/pr_CORDEX-ANT_histo&quot;| __truncated__ &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/tn_CORDEX-ANT_histo&quot;| __truncated__ &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/rx1day_CORDEX-ANT_h&quot;| __truncated__ &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/tx_CORDEX-ANT_histo&quot;| __truncated__ ...
+ $ type      : chr  &quot;opendap&quot; &quot;opendap&quot; &quot;opendap&quot; &quot;opendap&quot; ...
+ $ variable  : chr  &quot;pr&quot; &quot;tn&quot; &quot;rx1day&quot; &quot;tx&quot; ...
+ $ project   : chr  &quot;CORDEX-ANT&quot; &quot;CORDEX-ANT&quot; &quot;CORDEX-ANT&quot; &quot;CORDEX-ANT&quot; ...
+ $ experiment: chr  &quot;historical&quot; &quot;historical&quot; &quot;historical&quot; &quot;historical&quot; ...
+ $ frequency : chr  &quot;mon&quot; &quot;mon&quot; &quot;mon&quot; &quot;mon&quot; ...
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code> refers to the path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> refers to the access mode, local (netcdf) or remote (opendap).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code> referst to the climatic variable or index (i.e. tas, pr, tn, rx1day, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">project</span></code> refers to the project coordinating the datasets (i.e. CORDEX-EUR, CMIP5, CMIP6, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">experiment</span></code> referst to the scenario (i.e. historical, rcp26, ssp126, rcp85, etc.)</p></li>
+</ul>
+<p>We can easily apply filters to narrow down to the desired file. In this example the TXx index (maximum of maximum temperatures) from CMIP6,  for the historical and ssp370 experiments. The information piece we need is the <code class="docutils literal notranslate"><span class="pre">location</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nc.file.ssp370</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.paths</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;CMIP6&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;netcdf&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;txx&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;ssp370&quot;</span><span class="p">)[[</span><span class="s">&quot;location&quot;</span><span class="p">]]</span>
+<span class="n">nc.file.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.paths</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;CMIP6&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;netcdf&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;txx&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;historical&quot;</span><span class="p">)[[</span><span class="s">&quot;location&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before loading the data, we can set common parameters such as the geographical domain, the target season (boreal summer in this example), the reference period for the historical baseline (in this case, the pre-industrial period) and the future period (in this case, the medioum term).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ref.period</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1850</span><span class="o">:</span><span class="m">1900</span>
+<span class="n">fut.period</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2041</span><span class="o">:</span><span class="m">2060</span>
+<span class="n">lonLim</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-11</span><span class="p">,</span><span class="w"> </span><span class="m">40</span><span class="p">)</span>
+<span class="n">latLim</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">)</span>
+<span class="n">season</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">6</span><span class="o">:</span><span class="m">8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we load the data for the historical and ssp585 experiments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">nc.file.hist</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;txx&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lonLim</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latLim</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref.period</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">season</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">)</span><span class="w">  </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressWarnings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 10:36:51.249873] Defining geo-location parameters
+
+[2024-11-07 10:36:51.795392] Defining time selection parameters
+
+[2024-11-07 10:36:51.84402] Retrieving data subset ...
+
+[2024-11-07 10:37:05.282443] Done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.ssp370</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">nc.file.ssp370</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;txx&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lonLim</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latLim</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fut.period</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">season</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">)</span><span class="w">  </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressWarnings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 10:37:05.451922] Defining geo-location parameters
+
+[2024-11-07 10:37:05.51715] Defining time selection parameters
+
+[2024-11-07 10:37:05.541033] Retrieving data subset ...
+
+[2024-11-07 10:37:09.102625] Done
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before continuing, we must retain the same models (in the same order) in both the future and historical grids. To do so, we apply the <code class="docutils literal notranslate"><span class="pre">intersectGrid</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.common.mems</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">intersectGrid</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">,</span><span class="w"> </span><span class="n">cmip6.ssp370</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;members&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">which.return</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+<span class="n">cmip6.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.common.mems</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">cmip6.ssp370</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.common.mems</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is always a good practice to make sure that the members in both grids are identical:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">identical</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="o">$</span><span class="n">Members</span><span class="p">,</span><span class="w"> </span><span class="n">cmip6.ssp370</span><span class="o">$</span><span class="n">Members</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">TRUE</div></div>
+</div>
+<p>Calculate the climate change signal with the <code class="docutils literal notranslate"><span class="pre">gridArithmetics</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.ssp370</span><span class="p">),</span><span class="w"> </span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">),</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 10:37:09.278633] - Computing climatology...
+
+[2024-11-07 10:37:09.528503] - Done.
+
+[2024-11-07 10:37:09.996502] - Computing climatology...
+
+[2024-11-07 10:37:10.319743] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the map with <code class="docutils literal notranslate"><span class="pre">spatialPlot</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures for scenario ssp370 and period 2041-2060&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">strip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strip.custom</span><span class="p">(</span><span class="n">factor.levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="o">$</span><span class="n">Members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/8c4f0418109c305b28c56277bcb7cbff8d426a947cb45a76b4a2f1295154d1d9.png"><img alt="../_images/8c4f0418109c305b28c56277bcb7cbff8d426a947cb45a76b4a2f1295154d1d9.png" src="../_images/8c4f0418109c305b28c56277bcb7cbff8d426a947cb45a76b4a2f1295154d1d9.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>Calculate and plot the map of the ensemble mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta.ens.mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.mem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 10:37:14.472943] - Aggregating members...
+
+[2024-11-07 10:37:14.48203] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta.ens.mean</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures for scenario ssp370 and period 2041-2060&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">strip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strip.custom</span><span class="p">(</span><span class="n">factor.levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="o">$</span><span class="n">Members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/ce14aa0abb21f98b1ecfac9522b2409c5ac6059a754cf49038b81df5d8c4acb3.png"><img alt="../_images/ce14aa0abb21f98b1ecfac9522b2409c5ac6059a754cf49038b81df5d8c4acb3.png" src="../_images/ce14aa0abb21f98b1ecfac9522b2409c5ac6059a754cf49038b81df5d8c4acb3.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+</section>
+<section id="application-of-a-land-sea-mask">
+<h2>3. Application of a land-sea mask<a class="headerlink" href="#application-of-a-land-sea-mask" title="Link to this heading">#</a></h2>
+<p>The land-sea masks necessary for this dataset are accessible in the IPCC-WGI/Atlas GitHub repository, which is mirrored here. Given that the CMIP6 data within the IPCC-WGI AR6 Interactive Atlas dataset adopts a consistent 1-degree grid, it is essential to reference the 1-degree mask (<code class="docutils literal notranslate"><span class="pre">land_sea_mask_1degree.nc4</span></code>) located in the same GitHub repository where the warming level information is available, this is the  <a class="reference external" href="https://github.com/IPCC-WG1/Atlas/tree/main/warming-levels"><strong>IPCC-WGI/Atlas GitHub repository</strong></a>. Therefore we can load this mask also remotely and using the <code class="docutils literal notranslate"><span class="pre">lonLim</span></code> and <code class="docutils literal notranslate"><span class="pre">latLim</span></code> parameters defined previously.
+The variable name is <code class="docutils literal notranslate"><span class="pre">sftlf</span></code> in this case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://github.com/SantanderMetGroup/ATLAS/raw/refs/heads/main/reference-grids/land_sea_mask_1degree.nc4&quot;</span>
+<span class="n">temp.file</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tempfile</span><span class="p">(</span><span class="n">fileext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.nc&quot;</span><span class="p">)</span>
+<span class="nf">curl_download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">temp.file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">temp.file</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sftlf&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lonLim</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                    </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latLim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 14:46:36.966025] Defining geo-location parameters
+
+[2024-11-07 14:46:37.035901] Defining time selection parameters
+
+NOTE: Undefined Dataset Time Axis (static variable)
+
+[2024-11-07 14:46:37.047954] Retrieving data subset ...
+
+[2024-11-07 14:46:37.114017] Done
+</pre></div>
+</div>
+</div>
+</div>
+<p>After loading the mask, we need to apply a threshold to the resulting grid to make it binary. In this example, we want to retain the data over the land areas. Therefore, we will set sea grid cells as <code class="docutils literal notranslate"><span class="pre">NA</span></code> (values below the threshold are positioned first in the <code class="docutils literal notranslate"><span class="pre">values</span></code> parameter), and land grid cells will be set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">binaryGrid</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GT&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/2703839a7abd8cb41e10a0c661edc32d8022f120f810ccaeaff0330cacfed03e.png"><img alt="../_images/2703839a7abd8cb41e10a0c661edc32d8022f120f810ccaeaff0330cacfed03e.png" src="../_images/2703839a7abd8cb41e10a0c661edc32d8022f120f810ccaeaff0330cacfed03e.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>To apply the mask, we can utilize the <code class="docutils literal notranslate"><span class="pre">gridArithmetics</span></code> function directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta.ens.mean.land</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="n">delta.ens.mean</span><span class="p">,</span><span class="w"> </span><span class="n">mask</span><span class="p">,</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta.ens.mean.land</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures for scenario ssp370 and period 2041-2060&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/dcc7dcd5e0bfcdcac2f6444114e0ac18d89f4502ec70f8c7db2a95a88d80388d.png"><img alt="../_images/dcc7dcd5e0bfcdcac2f6444114e0ac18d89f4502ec70f8c7db2a95a88d80388d.png" src="../_images/dcc7dcd5e0bfcdcac2f6444114e0ac18d89f4502ec70f8c7db2a95a88d80388d.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>To apply the same mask to the multi-model grid, a trick can be employed to duplicate the mask for each member in the target grid using the <code class="docutils literal notranslate"><span class="pre">rep</span></code> function. The expression <code class="docutils literal notranslate"><span class="pre">getShape(delta,</span> <span class="pre">&quot;member&quot;)</span></code> returns the number of members in the <code class="docutils literal notranslate"><span class="pre">delta</span></code> grid. The resulting grid is a list with a length equal to the number of members, where each slot contains the same mask grid. Afterwards, <code class="docutils literal notranslate"><span class="pre">binaryGrid</span></code> is used to bind them all along the member dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">multi.mask</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">mask</span><span class="p">),</span><span class="w"> </span><span class="nf">getShape</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;member&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">bindGrid</span><span class="p">(</span><span class="n">dimension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;member&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">skip.temporal.check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we are ready to apply <code class="docutils literal notranslate"><span class="pre">gridArithmetics</span></code>, as the dimension lengths are now the same in both the target grid and the mask grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta.land</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">multi.mask</span><span class="p">,</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">)</span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta.land</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures for scenario ssp370 and period 2041-2060&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">strip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strip.custom</span><span class="p">(</span><span class="n">factor.levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="o">$</span><span class="n">Members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/e4b5da88793b4b72791038425df531d1fc5260ad229f31d5a3ac379acee8ac72.png"><img alt="../_images/e4b5da88793b4b72791038425df531d1fc5260ad229f31d5a3ac379acee8ac72.png" src="../_images/e4b5da88793b4b72791038425df531d1fc5260ad229f31d5a3ac379acee8ac72.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+</section>
+<section id="generate-regionalized-information">
+<h2>4. Generate regionalized information<a class="headerlink" href="#generate-regionalized-information" title="Link to this heading">#</a></h2>
+<p>To get regionalized outcomes, we could consider any region within our study area. In this example, we use one of the IPCC-WGI Reference Regions available at <a class="reference external" href="https://github.com/IPCC-WG1/Atlas/tree/main/warming-levels"><strong>IPCC-WGI/Atlas GitHub repository</strong></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ref.regs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readOGR</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/IPCC-WG1/Atlas/refs/heads/main/reference-regions/IPCC-WGI-reference-regions-v4.geojson&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">                </span><span class="n">suppressWarnings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OGR data source with driver: GeoJSON 
+Source: &quot;https://raw.githubusercontent.com/IPCC-WG1/Atlas/refs/heads/main/reference-regions/IPCC-WGI-reference-regions-v4.geojson&quot;, layer: &quot;IPCC-WGI-reference-regions-v4&quot;
+with 58 features
+It has 5 fields
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">ref.regs</span><span class="p">)</span>
+<span class="nf">text</span><span class="p">(</span><span class="nf">coordinates</span><span class="p">(</span><span class="n">ref.regs</span><span class="p">)[,</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="nf">coordinates</span><span class="p">(</span><span class="n">ref.regs</span><span class="p">)[,</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="n">ref.regs</span><span class="o">$</span><span class="n">Acronym</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/072dddfb99f3e1ea07b7224c8896c184b752f5f9af295a238b51494f8d1392f5.png"><img alt="../_images/072dddfb99f3e1ea07b7224c8896c184b752f5f9af295a238b51494f8d1392f5.png" src="../_images/072dddfb99f3e1ea07b7224c8896c184b752f5f9af295a238b51494f8d1392f5.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>These regions can be added as a layer when plotting the map with <code class="docutils literal notranslate"><span class="pre">spatialPlot</span></code>. We do this by passing <code class="docutils literal notranslate"><span class="pre">list(ref.regs,</span> <span class="pre">first</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code> to the <code class="docutils literal notranslate"><span class="pre">sp.layout</span></code> parameter. Note that the regions are passed inside a list, where other parameters can be added, such as <code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">=</span> <span class="pre">FALSE</span></code> to overlay the layer on top, or others to adjust line width, color, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta.ens.mean.land</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures for scenario ssp370 and period 2041-2060&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">sp.layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">ref.regs</span><span class="p">,</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">F</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/3343cb37ac99f3aa1522f08c4c313f35702c3507c9b33565d0c1d462e51f1a39.png"><img alt="../_images/3343cb37ac99f3aa1522f08c4c313f35702c3507c9b33565d0c1d462e51f1a39.png" src="../_images/3343cb37ac99f3aa1522f08c4c313f35702c3507c9b33565d0c1d462e51f1a39.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>In this example we are going to focus on the <em>Mediterranean</em> (MED).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">med</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">ref.regs</span><span class="p">,</span><span class="w"> </span><span class="n">Acronym</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;MED&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">as</span><span class="p">(</span><span class="s">&quot;SpatialPolygons&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The grids here loaded indicate they are “LatLonProjection”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">attr</span><span class="p">(</span><span class="n">delta.ens.mean.land</span><span class="o">$</span><span class="n">xyCoords</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;projection&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'LatLonProjection'</div></div>
+</div>
+<p>The reference regions projections is…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">proj4string</span><span class="p">(</span><span class="n">med</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'+proj=longlat +datum=WGS84 +no_defs'</div></div>
+</div>
+<p>Although they may seem different, <code class="docutils literal notranslate"><span class="pre">LatLonProjection</span></code> in the IA-Dataset is equivalent to <code class="docutils literal notranslate"><span class="pre">+proj=longlat</span> <span class="pre">+datum=WGS84</span> <span class="pre">+no_defs</span></code>. Therefore, we redefine the projection to allow for the subsequent intersection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">attr</span><span class="p">(</span><span class="n">delta.ens.mean.land</span><span class="o">$</span><span class="n">xyCoords</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;projection&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">proj4string</span><span class="p">(</span><span class="n">med</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we are ready for the intersection. Apply the <code class="docutils literal notranslate"><span class="pre">overGrid</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta.ens.mean.land.med</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">overGrid</span><span class="p">(</span><span class="n">delta.ens.mean.land</span><span class="p">,</span><span class="w"> </span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">med</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta.ens.mean.land.med</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures for the ssp370 scenario and the 2041-2060 period&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">sp.layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">ref.regs</span><span class="p">,</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">F</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/0e3321a766c196aef7e39a7dcd505d4e7c54ee3bc2b9987ef2851915fbe3e814.png"><img alt="../_images/0e3321a766c196aef7e39a7dcd505d4e7c54ee3bc2b9987ef2851915fbe3e814.png" src="../_images/0e3321a766c196aef7e39a7dcd505d4e7c54ee3bc2b9987ef2851915fbe3e814.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>Next, we show an example of generating regional stripes, although other visualizations could also be created. First, we average the data yearly using the <code class="docutils literal notranslate"><span class="pre">aggregateGrid</span></code> function, which returns yearly data of winter precipitation averages (3-month averages). Next, we calculate the historical climatology to serve as the reference baseline.</p>
+<p>Following a similar approach to the one used earlier for the land mask application, we duplicate the historical climatology for each time step in the future yearly data to ensure consistent array dimensions. This allows for calculating yearly anomalies relative to the historical climatology using the <code class="docutils literal notranslate"><span class="pre">gridArithmetics</span></code> function. In other words, the historical climatology is subtracted from each future year of the projections.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.ssp370.y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">cmip6.ssp370</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">cmip6.hist.c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">)</span>
+<span class="n">cmip6.hist.multi.year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">cmip6.hist.c</span><span class="p">),</span><span class="w"> </span><span class="nf">getShape</span><span class="p">(</span><span class="n">cmip6.ssp370.y</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">bindGrid</span><span class="p">(</span><span class="n">dimension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">year.delta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="n">cmip6.ssp370.y</span><span class="p">,</span><span class="w"> </span><span class="n">cmip6.hist.multi.year</span><span class="p">,</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 10:37:24.580067] Performing annual aggregation...
+
+[2024-11-07 10:37:29.598088] Done.
+
+[2024-11-07 10:37:29.659808] - Computing climatology...
+
+[2024-11-07 10:37:30.56635] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>To perform spatial aggregations we only need to apply the function <code class="docutils literal notranslate"><span class="pre">aggregateGrid</span></code> again but with the appropriate parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">regional.mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">year.delta</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.spatial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating areal weights...
+
+[2024-11-07 10:37:31.282897] - Aggregating spatially...
+
+[2024-11-07 10:37:31.318585] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">stripePlot</span></code> performs the same spatial aggregation internally and plots the stripes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">stripePlot</span><span class="p">(</span><span class="n">year.delta</span><span class="p">,</span><span class="w"> </span>
+<span class="w">           </span><span class="n">aggr.spatial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">),</span><span class="w"> </span>
+<span class="w">           </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Change of the Maximum of maximum temperatures (ºC) during JJA over Land&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Reds&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="n">rev.colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating areal weights...
+
+[2024-11-07 10:37:31.344606] - Aggregating spatially...
+
+[2024-11-07 10:37:31.379066] - Done.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/7a8b8ea640037aba518ab6e69d7f5d2458cd030b9622bb056b115e864bd690f0.png"><img alt="../_images/7a8b8ea640037aba518ab6e69d7f5d2458cd030b9622bb056b115e864bd690f0.png" src="../_images/7a8b8ea640037aba518ab6e69d7f5d2458cd030b9622bb056b115e864bd690f0.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+<p>Next the stripes of the historical reference are plotted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">stripePlot</span><span class="p">(</span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)),</span><span class="w"> </span>
+<span class="w">           </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Land Maximum of maximum temperatures (ºC) during JJA in the hisrorical experiment&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="s">&quot;YlOrBr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-07 10:37:31.582012] Performing annual aggregation...
+
+[2024-11-07 10:37:41.589599] Done.
+
+Calculating areal weights...
+
+[2024-11-07 10:37:41.630434] - Aggregating spatially...
+
+[2024-11-07 10:37:42.266306] - Done.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/924f0da9b0ed1158d3a6c7f0987a99d3f43fc917319e94169a1f09bcfdbee970.png"><img alt="../_images/924f0da9b0ed1158d3a6c7f0987a99d3f43fc917319e94169a1f09bcfdbee970.png" src="../_images/924f0da9b0ed1158d3a6c7f0987a99d3f43fc917319e94169a1f09bcfdbee970.png" style="width: 960px; height: 360px;" /></a>
+</div>
+</div>
+</section>
+<section id="session-info">
+<h2>Session Info<a class="headerlink" href="#session-info" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sessionInfo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.3 LTS
+
+Matrix products: default
+BLAS/LAPACK: /opt/conda/envs/climate4r/lib/libopenblasp-r0.3.27.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8          LC_NUMERIC=C                 
+ [3] LC_TIME=en_US.UTF-8           LC_COLLATE=en_US.UTF-8       
+ [5] LC_MONETARY=en_US.UTF-8       LC_MESSAGES=en_US.UTF-8      
+ [7] LC_PAPER=en_US.UTF-8          LC_NAME=en_US.UTF-8          
+ [9] LC_ADDRESS=en_US.UTF-8        LC_TELEPHONE=en_US.UTF-8     
+[11] LC_MEASUREMENT=en_US.UTF-8    LC_IDENTIFICATION=en_US.UTF-8
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] RColorBrewer_1.1-3  magrittr_2.0.3      lattice_0.22-6     
+ [4] rgdal_1.6-7         sp_2.1-4            geoprocessoR_0.2.2 
+ [7] visualizeR_1.6.4    transformeR_2.2.2   loadeR_1.8.1       
+[10] climate4R.UDG_0.2.6 loadeR.java_1.1.1   rJava_1.0-11       
+[13] repr_1.1.7         
+
+loaded via a namespace (and not attached):
+ [1] viridisLite_0.4.2       IRdisplay_1.1           R.utils_2.12.3         
+ [4] fields_16.2             bitops_1.0-8            fastmap_1.2.0          
+ [7] RCurl_1.98-1.16         digest_0.6.37           dotCall64_1.1-1        
+[10] lifecycle_1.0.4         sf_1.0-16               verification_1.42      
+[13] terra_1.7-78            compiler_4.3.3          CircStats_0.2-6        
+[16] rlang_1.1.4             tools_4.3.3             utf8_1.2.4             
+[19] sm_2.2-6.0              data.table_1.15.4       interp_1.1-6           
+[22] classInt_0.4-10         abind_1.4-5             KernSmooth_2.23-24     
+[25] pbdZMQ_0.3-13           gdalUtils_2.0.3.2       R.oo_1.26.0            
+[28] grid_4.3.3              fansi_1.0.6             latticeExtra_0.6-30    
+[31] SpecsVerification_0.5-3 e1071_1.7-16            colorspace_2.1-1       
+[34] scales_1.3.0            iterators_1.0.14        MASS_7.3-60.0.1        
+[37] cli_3.6.3               crayon_1.5.3            DBI_1.2.3              
+[40] pbapply_1.7-2           proxy_0.4-27            maps_3.4.2             
+[43] mapplots_1.5.2          parallel_4.3.3          base64enc_0.1-3        
+[46] vctrs_0.6.5             boot_1.3-31             jsonlite_1.8.9         
+[49] kohonen_3.0.12          jpeg_0.1-10             foreach_1.5.2          
+[52] units_0.8-5             glue_1.7.0              spam_2.10-0            
+[55] dtw_1.23-1              codetools_0.2-20        akima_0.6-3.4          
+[58] deldir_2.0-4            raster_3.6-26           munsell_0.5.1          
+[61] pillar_1.9.0            htmltools_0.5.8.1       IRkernel_1.3.2         
+[64] R6_2.5.1                RcppEigen_0.3.4.0.2     vioplot_0.5.0          
+[67] evaluate_1.0.0          png_0.1-8               R.methodsS3_1.8.2      
+[70] class_7.3-22            Rcpp_1.0.13             uuid_1.2-1             
+[73] easyVerification_0.4.5  padr_0.6.2              zoo_1.8-12             
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./regional_aggregation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../maps_of_change/Maps_of_change_under_global-warming-levels.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Projected climate change signals and uncertainty under global warming levels</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-in-this-notebook">Contents in this notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">1. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">2. Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-of-a-land-sea-mask">3. Application of a land-sea mask</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-regionalized-information">4. Generate regionalized information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#session-info">Session Info</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Maialen Iturbide, Ezequiel Cimadevilla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

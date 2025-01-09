@@ -17,3 +17,4 @@ IPCC-Atlas-Datalab.Rproj
 debug/
 **/log/
 .ipynb_checkpoints/
+book/**/_build

@@ -1,0 +1,1295 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Projected climate change signals and uncertainty under global warming levels &#8212; The IPCC AR6 Interactive Atlas Datalab (R)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'maps_of_change/Maps_of_change_under_global-warming-levels';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Regional averaging of climate information" href="../regional_aggregation/Regional_aggregation_and_visualization.html" />
+    <link rel="prev" title="Getting started" href="../getting_started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../getting_started.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">The IPCC AR6 Interactive Atlas Datalab (R)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../getting_started.html">
+                    Getting started
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Projected climate change signals and uncertainty under global warming levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../regional_aggregation/Regional_aggregation_and_visualization.html">Regional averaging of climate information</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/maps_of_change/Maps_of_change_under_global-warming-levels.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Projected climate change signals and uncertainty under global warming levels</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-in-this-notebook">Contents in this notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">1. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-global-warming-level-analysis-dimension">2. The Global Warming Level analysis dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-for-the-different-gwls">3. Data loading for the different GWLs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-for-the-historical-reference">4. Data loading for the historical reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-calculation-and-representation">5. Uncertainty Calculation and Representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-workflow-code-summary">Complete Workflow Code Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#session-info">Session Info</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="projected-climate-change-signals-and-uncertainty-under-global-warming-levels">
+<h1>Projected climate change signals and uncertainty under global warming levels<a class="headerlink" href="#projected-climate-change-signals-and-uncertainty-under-global-warming-levels" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>This notebook is a reproducibility example of the IPCC-WGI AR6 Interactive Atlas products. This work is licensed under a <a class="reference external" href="http://creativecommons.org/licenses/by/4.0">Creative Commons Attribution 4.0 International License</a>.</p>
+<p><img alt="Creative Commons License &gt;" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></p>
+</div></blockquote>
+<p><strong>M. Iturbide</strong> (Santander Meteorology Group. Instituto de Física de Cantabria, CSIC-UC, Santander, Spain).</p>
+<p>This notebook is a reproducibility example for the <a class="reference external" href="https://interactive-atlas.ipcc.ch/"><strong>IPCC-WGI AR6 Interactive Atlas</strong></a> products.</p>
+<p>This notebook works with the data available in this Hub. In particular, the <strong>IPCC-WGI AR6 Interactive Atlas Dataset</strong>, originally published at <a class="reference external" href="https://digital.csic.es/handle/10261/280324"><strong>DIGITAL.CSIC</strong></a> for the long-term archival, and also available through the <strong><a class="reference external" href="https://cds.climate.copernicus.eu/datasets/projections-climate-atlas?tab=overview">Copernicus Data Store (CDS)</a></strong>.</p>
+<p>Open the <strong><code class="docutils literal notranslate"><span class="pre">Getting_started.ipynb</span></code></strong> for a <strong>description of the available data</strong> and for a quick **introduction to the <strong><a class="reference external" href="https://github.com/SantanderMetGroup/climate4R">climate4R framework</a></strong>, the bundle of R packages used in this notebook.</p>
+<section id="contents-in-this-notebook">
+<h2>Contents in this notebook<a class="headerlink" href="#contents-in-this-notebook" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Libraries</p></li>
+<li><p>The Global Warming Level analysis dimension</p></li>
+<li><p>Data loading for the different GWLs</p></li>
+<li><p>Data loading for the historical reference</p></li>
+<li><p>Uncertainty calculation and representation</p></li>
+</ol>
+<hr class="docutils" />
+<p>Before we start, or at any stage of the notebook, we can customize the plotting area within this notebook as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="c1"># Change plot size </span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">18</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="libraries">
+<h2>1. Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h2>
+<p>The core <em><strong>climate4R</strong></em> libraries that allow for <strong>data loading, transformation</strong> (e.g. spatio-temporal aggregations), and <strong>visualization</strong> are <code class="docutils literal notranslate"><span class="pre">loadeR</span></code>, <code class="docutils literal notranslate"><span class="pre">transformeR</span></code> and <code class="docutils literal notranslate"><span class="pre">visualizeR</span></code>. In this example notebook we will also use the <code class="docutils literal notranslate"><span class="pre">geoprocessoR</span></code> package to perform spatial operations.</p>
+<p>We will also use other useful libraries; the plotting library <code class="docutils literal notranslate"><span class="pre">lattice</span></code>, <code class="docutils literal notranslate"><span class="pre">RColorBrewer</span></code> for selecting color palettes, and the <code class="docutils literal notranslate"><span class="pre">magrittr</span></code> library for piping operations (through <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">loadeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">transformeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">visualizeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: rJava
+
+Loading required package: loadeR.java
+
+Java version 22x amd64 by N/A detected
+
+NetCDF Java Library v4.6.0-SNAPSHOT (23 Apr 2015) loaded and ready
+
+Loading required package: climate4R.UDG
+
+climate4R.UDG version 0.2.6 (2023-06-26) is loaded
+
+Please use &#39;citation(&quot;climate4R.UDG&quot;)&#39; to cite this package.
+
+loadeR version 1.8.1 (2023-06-22) is loaded
+
+WARNING: Your current version of loadeR (v1.8.1) is not up-to-date
+
+Get the latest stable version (1.8.2) using &lt;devtools::install_github(c(&#39;SantanderMetGroup/climate4R.UDG&#39;,&#39;SantanderMetGroup/loadeR&#39;))&gt;
+
+Please use &#39;citation(&quot;loadeR&quot;)&#39; to cite this package.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    _______   ____  ___________________  __  ________ 
+   / ___/ /  / /  |/  / __  /_  __/ __/ / / / / __  / 
+  / /  / /  / / /|_/ / /_/ / / / / __/ / /_/ / /_/_/  
+ / /__/ /__/ / /  / / __  / / / / /__ /___  / / \ \ 
+ \___/____/_/_/  /_/_/ /_/ /_/  \___/    /_/\/   \_\ 
+ 
+      github.com/SantanderMetGroup/climate4R
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>transformeR version 2.2.2 (2023-10-26) is loaded
+
+WARNING: Your current version of transformeR (v2.2.2) is not up-to-date
+
+Get the latest stable version (2.2.3) using &lt;devtools::install_github(&#39;SantanderMetGroup/transformeR&#39;)&gt;
+
+Please see &#39;citation(&quot;transformeR&quot;)&#39; to cite this package.
+
+visualizeR version 1.6.4 (2023-10-26) is loaded
+
+Please see &#39;citation(&quot;visualizeR&quot;)&#39; to cite this package.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-global-warming-level-analysis-dimension">
+<h2>2. The Global Warming Level analysis dimension<a class="headerlink" href="#the-global-warming-level-analysis-dimension" title="Link to this heading">#</a></h2>
+<p>Instead of calculating climate change anomalies over a fixed period, we will compute the anomaly based on a specific level of global warming (GWL). To achieve this, we need the information on the <strong>time windows during which global surface temperature reaches various levels of warming</strong>. These time windows vary across Global Climate Models (GCMs).</p>
+<p>This data is available at the <a class="reference external" href="https://github.com/IPCC-WG1/Atlas/tree/main/warming-levels"><strong>IPCC-WGI/Atlas GitHub repository</strong></a>. Specifically, we require the information in the <code class="docutils literal notranslate"><span class="pre">CMIP6_Atlas_WarmingLevels.csv</span></code> file, as we will be working with climate projections from CMIP6.</p>
+<p>We can read the file remotely as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://github.com/SantanderMetGroup/ATLAS/raw/refs/heads/main/warming-levels/CMIP6_Atlas_WarmingLevels.csv&quot;</span>
+<span class="n">gwls</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">gwls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	35 obs. of  17 variables:
+ $ model_run  : chr  &quot;ACCESS-CM2_r1i1p1f1&quot; &quot;ACCESS-ESM1-5_r1i1p1f1&quot; &quot;AWI-CM-1-1-MR_r1i1p1f1&quot; &quot;BCC-CSM2-MR_r1i1p1f1&quot; ...
+ $ X1.5_ssp126: int  2027 2030 2022 2041 NA 2013 2026 2021 2023 2027 ...
+ $ X2_ssp126  : int  2042 2072 2050 NA NA 2025 2042 2038 2037 2058 ...
+ $ X3_ssp126  : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ X4_ssp126  : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ X1.5_ssp245: int  2028 2029 2020 2035 2055 2012 2028 2024 2024 2030 ...
+ $ X2_ssp245  : int  2040 2045 2039 2057 2088 2023 2042 2039 2038 2048 ...
+ $ X3_ssp245  : int  2070 NA NA NA NA 2049 2078 2075 2066 2084 ...
+ $ X4_ssp245  : int  NA NA NA NA NA 2083 NA NA NA NA ...
+ $ X1.5_ssp370: int  2027 2033 2021 2032 2046 2012 2030 2027 2025 2032 ...
+ $ X2_ssp370  : int  2039 2048 2037 2046 2065 2023 2043 2041 2039 2045 ...
+ $ X3_ssp370  : int  2062 2069 2064 2074 NA 2043 2068 2063 2063 2066 ...
+ $ X4_ssp370  : int  2082 NA NA NA NA 2059 2087 2085 2087 2083 ...
+ $ X1.5_ssp585: int  2025 2027 2019 2031 2047 2011 2023 2020 2021 2028 ...
+ $ X2_ssp585  : int  2038 2039 2036 2043 2064 2022 2034 2033 2033 2040 ...
+ $ X3_ssp585  : int  2055 2060 2059 2065 2088 2040 2055 2053 2052 2058 ...
+ $ X4_ssp585  : int  2071 2078 2079 NA NA 2054 2071 2068 2069 2072 ...
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we will focus on the <strong>+3ºC GWL</strong>. We will use the <code class="docutils literal notranslate"><span class="pre">ssp585</span></code> scenario, though any other scenario could be used, as the anomalies do not vary significantly across scenarios when analyzed through the GWL framework.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gwl3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gwls</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;model_run&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;X3_ssp585&quot;</span><span class="p">)]</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">print</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                   model_run X3_ssp585
+1        ACCESS-CM2_r1i1p1f1      2055
+2     ACCESS-ESM1-5_r1i1p1f1      2060
+3     AWI-CM-1-1-MR_r1i1p1f1      2059
+4       BCC-CSM2-MR_r1i1p1f1      2065
+5       CAMS-CSM1-0_r2i1p1f1      2088
+6           CanESM5_r1i1p1f1      2040
+7             CESM2_r4i1p1f1      2055
+8       CESM2-WACCM_r1i1p1f1      2053
+9      CMCC-CM2-SR5_r1i1p1f1      2052
+10       CNRM-CM6-1_r1i1p1f2      2058
+11    CNRM-CM6-1-HR_r1i1p1f2      2051
+12      CNRM-ESM2-1_r1i1p1f2      2064
+13        EC-Earth3_r1i1p1f1      2057
+14    EC-Earth3-Veg_r1i1p1f1      2050
+15 EC-Earth3-Veg-LR_r1i1p1f1      9999
+16        FGOALS-g3_r1i1p1f1      2072
+17         GFDL-CM4_r1i1p1f1      2059
+18        GFDL-ESM4_r1i1p1f1      2075
+19  HadGEM3-GC31-LL_r1i1p1f3      2047
+20         IITM-ESM_r1i1p1f1      2075
+21        INM-CM4-8_r1i1p1f1      2069
+22        INM-CM5-0_r1i1p1f1      2074
+23     IPSL-CM6A-LR_r1i1p1f1      2050
+24       KACE-1-0-G_r2i1p1f1      2042
+25        KIOST-ESM_r1i1p1f1      2063
+26       MIROC-ES2L_r1i1p1f2      2070
+27           MIROC6_r1i1p1f1      2076
+28    MPI-ESM1-2-HR_r1i1p1f1      2073
+29    MPI-ESM1-2-LR_r1i1p1f1      2071
+30       MRI-ESM2-0_r1i1p1f1      2064
+31            NESM3_r1i1p1f1      2054
+32       NorESM2-LM_r1i1p1f1      2077
+33       NorESM2-MM_r1i1p1f1      2076
+34          TaiESM1_r1i1p1f1      2052
+35      UKESM1-0-LL_r1i1p1f2      2046
+</pre></div>
+</div>
+</div>
+</div>
+<p>The object <code class="docutils literal notranslate"><span class="pre">gwl3</span></code> is a data frame that contains the <strong>central year within a 20-year time window during which the +3ºC GWL is reached for each model</strong>. For more information, refer to the <a class="reference external" href="https://github.com/IPCC-WG1/Atlas/tree/main/warming-levels">IPCC-WGI/Atlas repository</a>.</p>
+</section>
+<section id="data-loading-for-the-different-gwls">
+<h2>3. Data loading for the different GWLs<a class="headerlink" href="#data-loading-for-the-different-gwls" title="Link to this heading">#</a></h2>
+<p>To load the data, we first need to determine the path of the file containing the specific data we require. This path can point to either a NetCDF file or a NcML catalog file. The available paths are listed in the <strong>data_inventory.csv</strong> file. We can read this information with function <code class="docutils literal notranslate"><span class="pre">read.csv</span></code> and apply <code class="docutils literal notranslate"><span class="pre">str</span></code> for a quick overview of the content:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../data_inventory.csv&quot;</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">data.paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	1726 obs. of  6 variables:
+ $ location  : chr  &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/pr_CORDEX-ANT_histo&quot;| __truncated__ &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/tn_CORDEX-ANT_histo&quot;| __truncated__ &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/rx1day_CORDEX-ANT_h&quot;| __truncated__ &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CORDEX-ANT/historical/tx_CORDEX-ANT_histo&quot;| __truncated__ ...
+ $ type      : chr  &quot;opendap&quot; &quot;opendap&quot; &quot;opendap&quot; &quot;opendap&quot; ...
+ $ variable  : chr  &quot;pr&quot; &quot;tn&quot; &quot;rx1day&quot; &quot;tx&quot; ...
+ $ project   : chr  &quot;CORDEX-ANT&quot; &quot;CORDEX-ANT&quot; &quot;CORDEX-ANT&quot; &quot;CORDEX-ANT&quot; ...
+ $ experiment: chr  &quot;historical&quot; &quot;historical&quot; &quot;historical&quot; &quot;historical&quot; ...
+ $ frequency : chr  &quot;mon&quot; &quot;mon&quot; &quot;mon&quot; &quot;mon&quot; ...
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code> refers to the path</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> refers to the access mode, local (netcdf) or remote (opendap).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code> referst to the climatic variable or index (i.e. tas, pr, tn, rx1day, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">project</span></code> refers to the project coordinating the datasets (i.e. CORDEX-EUR, CMIP5, CMIP6, etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">experiment</span></code> referst to the scenario (i.e. historical, rcp26, ssp126, rcp85, etc.)</p></li>
+</ul>
+<p>We can easily apply filters to narrow down to the desired file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">filtered.path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.paths</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;CMIP6&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;ssp585&quot;</span><span class="p">)</span>
+<span class="n">filtered.path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 2 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>location</th><th scope=col>type</th><th scope=col>variable</th><th scope=col>project</th><th scope=col>experiment</th><th scope=col>frequency</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>77</th><td>https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CMIP6/ssp585/pr_CMIP6_ssp585_mon_201501-210012.nc</td><td>opendap</td><td>pr</td><td>CMIP6</td><td>ssp585</td><td>mon</td></tr>
+	<tr><th scope=row>940</th><td>/home/jovyan/shared/data/IPCC-WGI_AR6_Interactive_Atlas_Dataset/CMIP6/ssp585/pr_CMIP6_ssp585_mon_201501-210012.nc      </td><td>netcdf </td><td>pr</td><td>CMIP6</td><td>ssp585</td><td>mon</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>As shown in the resulting table, we have two versions (<code class="docutils literal notranslate"><span class="pre">type</span></code>) of the dataset. The first version is accessed via OPeNDAP through THREDDS, while the second version is located in the <code class="docutils literal notranslate"><span class="pre">shared</span></code> directory of this Hub and can be accessed directly. In this example, we will choose the second option.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nc.file</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">filtered.path</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;opendap&quot;</span><span class="p">)[[</span><span class="s">&quot;location&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before data loading do an inventory of the data using the <code class="docutils literal notranslate"><span class="pre">dataInventory</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nc.file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CMIP6/ssp585/pr_CMIP6_ssp585_mon_201501-210012.nc'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">di</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dataInventory</span><span class="p">(</span><span class="n">nc.file</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">di</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:34:05.166797] Doing inventory ...
+
+[2025-01-09 12:34:05.205669] Opening dataset...
+
+[2025-01-09 12:34:06.143759] The dataset was successfuly opened
+
+[2025-01-09 12:34:06.235806] Retrieving info for &#39;pr&#39; (0 vars remaining)
+
+[2025-01-09 12:34:06.357078] Done.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of 1
+ $ pr:List of 7
+  ..$ Description: chr &quot;Monthly mean of daily accumulated precipitation&quot;
+  ..$ DataType   : chr &quot;float&quot;
+  ..$ Shape      : int [1:4] 33 1032 180 360
+  ..$ Units      : chr &quot;mm&quot;
+  ..$ DataSizeMb : num 8827
+  ..$ Version    : logi NA
+  ..$ Dimensions :List of 4
+  .. ..$ member:List of 3
+  .. .. ..$ Type  : chr &quot;Ensemble&quot;
+  .. .. ..$ Units : chr &quot;&quot;
+  .. .. ..$ Values: chr [1:33] &quot;CSIRO-ARCCSS_ACCESS-CM2_r1i1p1f1&quot; &quot;CSIRO_ACCESS-ESM1-5_r1i1p1f1&quot; &quot;BCC_BCC-CSM2-MR_r1i1p1f1&quot; &quot;CAMS_CAMS-CSM1-0_r2i1p1f1&quot; ...
+  .. ..$ time  :List of 4
+  .. .. ..$ Type      : chr &quot;Time&quot;
+  .. .. ..$ TimeStep  : chr &quot;30.436 days&quot;
+  .. .. ..$ Units     : chr &quot;days since 1850-01-01 00:00:00&quot;
+  .. .. ..$ Date_range: chr &quot;2015-01-01T00:00:00Z - 2100-12-01T00:00:00Z&quot;
+  .. ..$ lat   :List of 5
+  .. .. ..$ Type       : chr &quot;Lat&quot;
+  .. .. ..$ Units      : chr &quot;degrees_north&quot;
+  .. .. ..$ Values     : num [1:180] -89.5 -88.5 -87.5 -86.5 -85.5 -84.5 -83.5 -82.5 -81.5 -80.5 ...
+  .. .. ..$ Shape      : int 180
+  .. .. ..$ Coordinates: chr &quot;lat&quot;
+  .. ..$ lon   :List of 5
+  .. .. ..$ Type       : chr &quot;Lon&quot;
+  .. .. ..$ Units      : chr &quot;degrees_east&quot;
+  .. .. ..$ Values     : num [1:360] -180 -178 -178 -176 -176 ...
+  .. .. ..$ Shape      : int 360
+  .. .. ..$ Coordinates: chr &quot;lon&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result includes information about the units, variables, dimensions, and more. Since we are working with warming levels and need to load a different period of years for each model, we will first extract the information about the members from the inventory. This information is essential to match the GWL array obtained earlier. In other words, we need to create an index object that provides the model position in the data for each row in the <code class="docutils literal notranslate"><span class="pre">gwl3</span></code> object. We can achieve this using the <code class="docutils literal notranslate"><span class="pre">grep</span></code> function in a loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ind</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">gwl3</span><span class="o">$</span><span class="n">model_run</span><span class="p">,</span><span class="w"> </span><span class="n">grep</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">di</span><span class="o">$</span><span class="n">pr</span><span class="o">$</span><span class="n">Dimensions</span><span class="o">$</span><span class="n">member</span><span class="o">$</span><span class="n">Values</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This index (<code class="docutils literal notranslate"><span class="pre">ind</span></code>) will enable us to load the data for each model separately, requesting a different 20-year time period each time. Before loading the data, we can set common parameters such as the geographical domain, the target season (boreal winter in this example), and the reference historical baseline (in this case, the pre-industrial period) for simplicity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ref.period</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1850</span><span class="o">:</span><span class="m">1900</span>
+<span class="n">lonLim</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-11</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">)</span>
+<span class="n">latLim</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">72</span><span class="p">)</span>
+<span class="n">season</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now <strong>apply the <code class="docutils literal notranslate"><span class="pre">loadGridData</span></code> function within a <code class="docutils literal notranslate"><span class="pre">lapply</span></code> loop</strong> to obtain a list of <em>climate4R</em> grids, where each slot represents a grid corresponding to a particular model. For a detailed explanation of what a <em>climate4R</em> grid is, please open the <strong><code class="docutils literal notranslate"><span class="pre">Getting_started.ipynb</span></code></strong> notebook.</p>
+<p><strong>The GWL period for each model is passed to the <code class="docutils literal notranslate"><span class="pre">loadGridData</span></code> function</strong> using the expression <code class="docutils literal notranslate"><span class="pre">(gwl3$X3_ssp585[x]-9):(gwl3$X3_ssp585[x]+10)</span></code>, which generates a 20-year vector starting from the central year minus 9 years and ending at the central year plus 10 years (the central years are defined in the <code class="docutils literal notranslate"><span class="pre">gwl3</span></code> object created earlier).</p>
+<p>We also introduce a <code class="docutils literal notranslate"><span class="pre">tryCatch</span></code> expression to prevent the loop from being interrupted in cases where models do not reach the global warming level (GWL) within the current century. Additionally, we pipe the <code class="docutils literal notranslate"><span class="pre">suppressMessages</span></code> function to minimize lengthy output logs. This <strong>loading process can take a few minutes</strong> and varies depending on the region and period requested.</p>
+<p>Note that <strong>if fixed periods are considered for the analysis, the process becomes much simpler</strong> because a loop is unnecessary, as the period to be loaded is common to all models. Please open the <strong><code class="docutils literal notranslate"><span class="pre">Getting_started.ipynb</span></code></strong> notebook for a simple example using fixed periods for the analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.ssp585.l</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">ind</span><span class="p">),</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nc.file</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lonLim</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latLim</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">gwl3</span><span class="o">$</span><span class="n">X3_ssp585</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="m">-9</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="n">gwl3</span><span class="o">$</span><span class="n">X3_ssp585</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="m">+10</span><span class="p">),</span>
+<span class="w">                 </span><span class="n">season</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ind</span><span class="p">[[</span><span class="n">x</span><span class="p">]])</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">        </span><span class="nf">tryCatch</span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="s">&quot;no data for this member and variable&quot;</span><span class="p">))</span><span class="w"> </span>
+<span class="w">    </span><span class="p">})</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressMessages</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can eliminate the “no data” slots in the list as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nodata.members</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">cmip6.ssp585.l</span><span class="p">,</span><span class="w"> </span><span class="n">is.null</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">unlist</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">which</span>
+<span class="n">cmip6.ssp585.l</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.ssp585.l</span><span class="p">[</span><span class="o">-</span><span class="n">nodata.members</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next code chunk, we perform an annual aggregation of the variable. Additionally, we generate a time-series plot to illustrate the concept of GWLs, where each model spans a different time period. The <code class="docutils literal notranslate"><span class="pre">temporalPlot</span></code> function calculates the spatial mean by default</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.ssp585.l.y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">cmip6.ssp585.l</span><span class="p">,</span><span class="w"> </span><span class="n">aggregateGrid</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressMessages</span>
+<span class="nf">temporalPlot</span><span class="p">(</span><span class="n">cmip6.ssp585.l.y</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressMessages</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/2cbe28b937649844821d1ede1ed6bdbfd5fcffe308b8e86fbf0c47e23b4a4831.png"><img alt="../_images/2cbe28b937649844821d1ede1ed6bdbfd5fcffe308b8e86fbf0c47e23b4a4831.png" src="../_images/2cbe28b937649844821d1ede1ed6bdbfd5fcffe308b8e86fbf0c47e23b4a4831.png" style="width: 1080px; height: 480px;" /></a>
+</div>
+</div>
+<p>To simplify the rest of the analysis, let’s combine all models into the same grid. We can achieve this by applying the <code class="docutils literal notranslate"><span class="pre">bindGrid</span></code> function and setting the <code class="docutils literal notranslate"><span class="pre">skip.temporal.check</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, as each model covers a different time period.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.ssp585</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">bindGrid</span><span class="p">(</span><span class="n">cmip6.ssp585.l</span><span class="p">,</span><span class="w"> </span><span class="n">dimension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;member&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">skip.temporal.check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we plot the map of the climatologies (mean of the period; 20-year means in this case) using the <code class="docutils literal notranslate"><span class="pre">climatology</span></code> and <code class="docutils literal notranslate"><span class="pre">spatialPlot</span></code> functions. The <code class="docutils literal notranslate"><span class="pre">climatology</span></code> function calculates the mean by default, though other functions can be specified to perform different aggregations over the period.</p>
+<p>In the resulting plot, each panel represents a CMIP6 member (a model). Note that we previously set the plotting window space in Jupyter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.ssp585</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">),</span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">            </span><span class="n">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mean precipitation (mm/day) for +3ºC GWL&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">strip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strip.custom</span><span class="p">(</span><span class="n">factor.levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmip6.ssp585</span><span class="o">$</span><span class="n">Members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:36:52.795996] - Computing climatology...
+
+[2025-01-09 12:36:53.262786] - Done.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/eb63fe29cf1bfe5b54daf0c380a687e8c53dd526a38a77686adca683f3d529a9.png"><img alt="../_images/eb63fe29cf1bfe5b54daf0c380a687e8c53dd526a38a77686adca683f3d529a9.png" src="../_images/eb63fe29cf1bfe5b54daf0c380a687e8c53dd526a38a77686adca683f3d529a9.png" style="width: 1200px; height: 480px;" /></a>
+</div>
+</div>
+</section>
+<section id="data-loading-for-the-historical-reference">
+<h2>4. Data loading for the historical reference<a class="headerlink" href="#data-loading-for-the-historical-reference" title="Link to this heading">#</a></h2>
+<p>To get the climate change signal, we first need to load data from the historical scenario. To do this we repeat the filtering process to get the required NetCDF path.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nc.file.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.paths</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;CMIP6&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;historical&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;opendap&quot;</span><span class="p">)[[</span><span class="s">&quot;location&quot;</span><span class="p">]]</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">print</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;https://hub.climate4r.ifca.es/thredds/dodsC/ipcc/ar6/atlas/ia-monthly/CMIP6/historical/pr_CMIP6_historical_mon_185001-201412.nc&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As mentioned above, we are considering the pre-industrial period (defined earlier in object <code class="docutils literal notranslate"><span class="pre">ref.period</span></code>). In this case, the reference period is common to all models, therefore, the process becomes simpler; all models are loaded at once into a single grid object and we do not need to set a loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">nc.file.hist</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lonLim</span><span class="p">,</span><span class="w"> </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">latLim</span><span class="p">,</span>
+<span class="w">                         </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref.period</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">season</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">season</span><span class="p">)</span><span class="w">  </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressWarnings</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:36:59.843148] Opening dataset...
+
+[2025-01-09 12:36:59.926658] The dataset was successfuly opened
+
+[2025-01-09 12:36:59.931243] Defining geo-location parameters
+
+[2025-01-09 12:36:59.996818] Defining time selection parameters
+
+[2025-01-09 12:37:00.030582] Retrieving data subset ...
+
+[2025-01-09 12:37:13.196329] Done
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before continuing, we must retain the same models (in the same order) in both the future and historical grids. To do so, we apply the <code class="docutils literal notranslate"><span class="pre">intersectGrid</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cmip6.common.mems</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">intersectGrid</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">,</span><span class="w"> </span><span class="n">cmip6.ssp585</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;members&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">which.return</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+<span class="n">cmip6.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.common.mems</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">cmip6.ssp585</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.common.mems</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is always a good practice to make sure that the members in both grids are identical:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">identical</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="o">$</span><span class="n">Members</span><span class="p">,</span><span class="w"> </span><span class="n">cmip6.ssp585</span><span class="o">$</span><span class="n">Members</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">TRUE</div></div>
+</div>
+<p>Now we can calculate the anomaly by computing the difference between both climatologies. We can easily do this using the <code class="docutils literal notranslate"><span class="pre">climatology</span></code> and <code class="docutils literal notranslate"><span class="pre">gridArithmetics</span></code> functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.ssp585</span><span class="p">),</span><span class="w"> </span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">),</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:37:13.564657] - Computing climatology...
+
+[2025-01-09 12:37:14.315452] - Done.
+
+[2025-01-09 12:37:14.40912] - Computing climatology...
+
+[2025-01-09 12:37:15.077509] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">delta</span></code> object results from an arithmetic operation between two climatologies it isn’t necessary to apply the <code class="docutils literal notranslate"><span class="pre">climatology</span></code> function to plot the corresponding maps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">0.1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-3</span><span class="p">,</span>
+<span class="w">            </span><span class="n">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mean precipitation anomaly for +3ºC GWL (rel. to preindustrial period)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">strip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strip.custom</span><span class="p">(</span><span class="n">factor.levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="o">$</span><span class="n">Members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/b26db98054100fd77b2b2feeb5d05ad4ea85d567f5d560e2bd5e4226b736478a.png"><img alt="../_images/b26db98054100fd77b2b2feeb5d05ad4ea85d567f5d560e2bd5e4226b736478a.png" src="../_images/b26db98054100fd77b2b2feeb5d05ad4ea85d567f5d560e2bd5e4226b736478a.png" style="width: 1200px; height: 480px;" /></a>
+</div>
+</div>
+<p>These maps represent the climate change signal as an absolute anomaly. We can calculate the relative anomaly as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">delta.rel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">),</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:37:21.048818] - Computing climatology...
+
+[2025-01-09 12:37:22.086641] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>To plot the resulting maps, we choose a specific Brewer palette, “BrBG” in this case (see the <a class="reference external" href="https://colorbrewer2.org/#type=diverging&amp;amp;scheme=BrBG&amp;amp;n=3">ColorBrewer website</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">delta.rel</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-50</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BrBG&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mean precipitation relative anomaly for +3ºC GWL (rel. to preindustrial period)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">strip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strip.custom</span><span class="p">(</span><span class="n">factor.levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="o">$</span><span class="n">Members</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/33afd30b15ea62fa140e57620cf293a5629a80da925502bb09adbfffaf065541.png"><img alt="../_images/33afd30b15ea62fa140e57620cf293a5629a80da925502bb09adbfffaf065541.png" src="../_images/33afd30b15ea62fa140e57620cf293a5629a80da925502bb09adbfffaf065541.png" style="width: 1200px; height: 480px;" /></a>
+</div>
+</div>
+<p>To calculate the multi-model mean, use function <code class="docutils literal notranslate"><span class="pre">aggregateGrid</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ens.mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">delta.rel</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.mem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:37:27.821689] - Aggregating members...
+
+[2025-01-09 12:37:27.832333] - Done.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change plot size </span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">18</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">ens.mean</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-50</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BrBG&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mean precipitation relative anomaly for +3ºC GWL (rel. to preindustrial period) and the multi-model ensemble mean&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/a762e7c5a2b9bb69f592a88b7750bf26c3b054144b6de729053d44f3266f3c9e.png"><img alt="../_images/a762e7c5a2b9bb69f592a88b7750bf26c3b054144b6de729053d44f3266f3c9e.png" src="../_images/a762e7c5a2b9bb69f592a88b7750bf26c3b054144b6de729053d44f3266f3c9e.png" style="width: 1080px; height: 360px;" /></a>
+</div>
+</div>
+</section>
+<section id="uncertainty-calculation-and-representation">
+<h2>5. Uncertainty Calculation and Representation<a class="headerlink" href="#uncertainty-calculation-and-representation" title="Link to this heading">#</a></h2>
+<p><em>climate4R</em> implements the “simple” and “advanced” methods for uncertainty characterization defined in the IPCC Sixth Assessment Report. The function to apply is <code class="docutils literal notranslate"><span class="pre">computeUncertainty</span></code>. Please refer to the <strong>AR6 WGI Cross-Chapter Box Atlas 1</strong> (<a class="reference external" href="https://www.ipcc.ch/report/ar6/wg1/chapter/atlas/">Gutiérrez et al., 2021</a>) for more information.</p>
+<p>In this example, we will use the ‘simple’ method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">uncert</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">computeUncertainty</span><span class="p">(</span><span class="n">historical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">)),</span><span class="w"> </span>
+<span class="w">                             </span><span class="n">anomaly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                             </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;simple&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="n">uncert</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:37:28.164966] - Aggregating members...
+
+[2025-01-09 12:37:28.182019] - Done.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/ed412a12fdd7094c0a1d6d315aeb8d3b8e51da7cc4f5f05b05cd27ee22e23790.png"><img alt="../_images/ed412a12fdd7094c0a1d6d315aeb8d3b8e51da7cc4f5f05b05cd27ee22e23790.png" src="../_images/ed412a12fdd7094c0a1d6d315aeb8d3b8e51da7cc4f5f05b05cd27ee22e23790.png" style="width: 1080px; height: 360px;" /></a>
+</div>
+</div>
+<p>The outcome yields a binary grid, readily convertible into a vectorial spatial object representing hatches. To achieve this transformation, utilize the <code class="docutils literal notranslate"><span class="pre">map.hatching</span></code> function. This function verifies a particular attribute within the grid, confirming its status as a “climatology” and ensuring that the length of the time dimension is 1. While our grid does not strictly meet the criteria of a climatology, its time dimension is singular. Therefore, we can successfully employ the function by applying the <code class="docutils literal notranslate"><span class="pre">climatology</span></code> function to our uncert object, as the values of the object remain the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cat1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">map.hatching</span><span class="p">(</span><span class="n">clim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uncert</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">climatology</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;LT&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">density</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressMessages</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The newly created object (<code class="docutils literal notranslate"><span class="pre">cat1</span></code>) is a list containing a <code class="docutils literal notranslate"><span class="pre">SpatialLines</span></code> object from the <code class="docutils literal notranslate"><span class="pre">sp</span></code> R package. It also includes other plotting parameters, which can be fine-tuned within the <code class="docutils literal notranslate"><span class="pre">map.hatching</span></code> function. This object can be added as a layer to our map using the <code class="docutils literal notranslate"><span class="pre">sp.layout</span></code> parameter, placing it inside a list, as this parameter allows for the addition of multiple spatial layers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">spatialPlot</span><span class="p">(</span><span class="n">ens.mean</span><span class="p">,</span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">sp.layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">cat1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BrBG&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CMIP6 - Total precipitation (PR) Change % - Warming 3°C SSP5-8.5 (rel. to 1850-1900)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/e5c01b7ab7672bc1676dbe78bb67988f20b1e7d4a1d3aba1fd8d831ee9e2aba3.png"><img alt="../_images/e5c01b7ab7672bc1676dbe78bb67988f20b1e7d4a1d3aba1fd8d831ee9e2aba3.png" src="../_images/e5c01b7ab7672bc1676dbe78bb67988f20b1e7d4a1d3aba1fd8d831ee9e2aba3.png" style="width: 1080px; height: 360px;" /></a>
+</div>
+</div>
+<p>To export the figure run the following (change the output path as desired).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pdf</span><span class="p">(</span><span class="s">&quot;../../../CMIP6_Total-precipitation-relative-change_Warming-3degC_SSP585_rel-to-1850-1900.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="n">ens.mean</span><span class="p">,</span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">sp.layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">cat1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BrBG&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CMIP6 - Total precipitation (PR) Change % - Warming 3°C SSP5-8.5 (rel. to 1850-1900)&quot;</span><span class="p">)</span>
+<span class="nf">dev.off</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><strong>pdf:</strong> 2</div></div>
+</div>
+</section>
+<section id="complete-workflow-code-summary">
+<h2>Complete Workflow Code Summary<a class="headerlink" href="#complete-workflow-code-summary" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Library loading</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">loadeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">transformeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">visualizeR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span>
+<span class="c1"># Read global warming level periods information </span>
+<span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://github.com/SantanderMetGroup/ATLAS/raw/refs/heads/main/warming-levels/CMIP6_Atlas_WarmingLevels.csv&quot;</span>
+<span class="n">gwls</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">gwl3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gwls</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;model_run&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;X3_ssp585&quot;</span><span class="p">)]</span>
+<span class="c1"># Obtain the data path of future projections</span>
+<span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../data_inventory.csv&quot;</span><span class="p">)</span>
+<span class="n">filtered.path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.paths</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;CMIP6&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;ssp585&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;opendap&quot;</span><span class="p">)</span>
+<span class="n">nc.file</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filtered.path</span><span class="p">[[</span><span class="s">&quot;location&quot;</span><span class="p">]]</span>
+<span class="c1"># Perform the inventory of the data within the NetCDF file</span>
+<span class="n">di</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dataInventory</span><span class="p">(</span><span class="n">nc.file</span><span class="p">)</span>
+<span class="c1"># Match the list of members (CMIP models) in the global warming periods information and in the data file</span>
+<span class="n">ind</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">gwl3</span><span class="o">$</span><span class="n">model_run</span><span class="p">,</span><span class="w"> </span><span class="n">grep</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">di</span><span class="o">$</span><span class="n">pr</span><span class="o">$</span><span class="n">Dimensions</span><span class="o">$</span><span class="n">member</span><span class="o">$</span><span class="n">Values</span><span class="p">)</span><span class="w"> </span>
+<span class="c1"># LOAD FUTURE SSP585 PROJECTION DATA in a loop (each iteration loads a single member for its corresponding warming level period)</span>
+<span class="n">cmip6.ssp585.l</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">ind</span><span class="p">),</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">dataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nc.file</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-11</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                 </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">72</span><span class="p">),</span>
+<span class="w">                 </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">gwl3</span><span class="o">$</span><span class="n">X3_ssp585</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="m">-9</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="n">gwl3</span><span class="o">$</span><span class="n">X3_ssp585</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="m">+10</span><span class="p">),</span>
+<span class="w">                 </span><span class="n">season</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span>
+<span class="w">                 </span><span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ind</span><span class="p">[[</span><span class="n">x</span><span class="p">]])</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span>
+<span class="w">        </span><span class="nf">tryCatch</span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="s">&quot;no data for this member and variable&quot;</span><span class="p">))</span><span class="w"> </span>
+<span class="w">    </span><span class="p">})</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">suppressMessages</span>
+<span class="c1"># Remove members with no data</span>
+<span class="n">nodata.members</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lapply</span><span class="p">(</span><span class="n">cmip6.ssp585.l</span><span class="p">,</span><span class="w"> </span><span class="n">is.null</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">unlist</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">which</span>
+<span class="n">cmip6.ssp585.l</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.ssp585.l</span><span class="p">[</span><span class="o">-</span><span class="n">nodata.members</span><span class="p">]</span>
+<span class="c1"># Create a multi-member grid </span>
+<span class="n">cmip6.ssp585</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">bindGrid</span><span class="p">(</span><span class="n">cmip6.ssp585.l</span><span class="p">,</span><span class="w"> </span><span class="n">dimension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;member&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">skip.temporal.check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1"># Obtain the data path for the historical experiment</span>
+<span class="n">nc.file.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.paths</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;CMIP6&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;historical&quot;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;opendap&quot;</span><span class="p">)[[</span><span class="s">&quot;location&quot;</span><span class="p">]]</span>
+<span class="c1"># LOAD HISTORICAL DATA for the defined reference period</span>
+<span class="n">cmip6.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">loadGridData</span><span class="p">(</span><span class="n">nc.file.hist</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pr&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">lonLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-11</span><span class="p">,</span><span class="w"> </span><span class="m">35</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">latLim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="w"> </span><span class="m">72</span><span class="p">),</span>
+<span class="w">                         </span><span class="n">years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1850</span><span class="o">:</span><span class="m">1900</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">season</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">))</span><span class="w"> </span>
+<span class="c1"># Keep common members in the historical and future data</span>
+<span class="n">cmip6.common.mems</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">intersectGrid</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">,</span><span class="w"> </span><span class="n">cmip6.ssp585</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;members&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">which.return</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">)</span>
+<span class="n">cmip6.hist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.common.mems</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">cmip6.ssp585</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cmip6.common.mems</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="c1"># CALCULATE THE FUTURE RELATIVE ANOMALY </span>
+<span class="n">delta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.ssp585</span><span class="p">),</span><span class="w"> </span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">),</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">)</span>
+<span class="n">delta.rel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gridArithmetics</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="nf">climatology</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">),</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">))</span>
+<span class="c1"># Calculate the ensemble mean</span>
+<span class="n">ens.mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">delta.rel</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.mem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mean</span><span class="p">))</span>
+<span class="c1"># Uncertainty calculation</span>
+<span class="n">uncert</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">computeUncertainty</span><span class="p">(</span><span class="n">historical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aggregateGrid</span><span class="p">(</span><span class="n">cmip6.hist</span><span class="p">,</span><span class="w"> </span><span class="n">aggr.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FUN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mean&quot;</span><span class="p">)),</span><span class="w"> </span>
+<span class="w">                             </span><span class="n">anomaly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                             </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;simple&quot;</span><span class="p">)</span>
+<span class="c1"># Create the hatches</span>
+<span class="n">cat1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">map.hatching</span><span class="p">(</span><span class="n">clim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uncert</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">climatology</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;LT&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">density</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span>
+<span class="c1"># FINAL MAP REPRESENTATION</span>
+<span class="nf">spatialPlot</span><span class="p">(</span><span class="n">ens.mean</span><span class="p">,</span>
+<span class="w">            </span><span class="n">backdrop.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;coastline&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">sp.layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">cat1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">color.theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BrBG&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">set.min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="n">set.max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span>
+<span class="w">            </span><span class="n">at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">-50</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CMIP6 - Total precipitation (PR) Change % - Warming 3°C SSP5-8.5 (rel. to 1850-1900)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2025-01-09 12:37:31.182602] Doing inventory ...
+
+[2025-01-09 12:37:31.216494] Opening dataset...
+
+[2025-01-09 12:37:31.290151] The dataset was successfuly opened
+
+[2025-01-09 12:37:31.350713] Retrieving info for &#39;pr&#39; (0 vars remaining)
+
+[2025-01-09 12:37:31.421061] Done.
+
+[2025-01-09 12:40:03.723499] Opening dataset...
+
+[2025-01-09 12:40:03.794434] The dataset was successfuly opened
+
+[2025-01-09 12:40:03.798872] Defining geo-location parameters
+
+[2025-01-09 12:40:03.860172] Defining time selection parameters
+
+Warning message in getTimeDomain(grid, dic, season, years, time, aggr.d, aggr.m, :
+“First date in dataset: 1850-01-01. Seasonal data for the first year requested not available”
+[2025-01-09 12:40:03.892769] Retrieving data subset ...
+
+[2025-01-09 12:40:16.494596] Done
+
+[2025-01-09 12:40:17.058449] - Computing climatology...
+
+[2025-01-09 12:40:17.549951] - Done.
+
+[2025-01-09 12:40:17.700109] - Computing climatology...
+
+[2025-01-09 12:40:18.608355] - Done.
+
+[2025-01-09 12:40:18.716086] - Computing climatology...
+
+[2025-01-09 12:40:19.364917] - Done.
+
+[2025-01-09 12:40:19.45488] - Aggregating members...
+
+[2025-01-09 12:40:19.466504] - Done.
+
+[2025-01-09 12:40:19.469941] - Aggregating members...
+
+[2025-01-09 12:40:19.488055] - Done.
+
+[2025-01-09 12:40:19.490852] - Computing climatology...
+
+[2025-01-09 12:40:19.501907] - Done.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/e5c01b7ab7672bc1676dbe78bb67988f20b1e7d4a1d3aba1fd8d831ee9e2aba3.png"><img alt="../_images/e5c01b7ab7672bc1676dbe78bb67988f20b1e7d4a1d3aba1fd8d831ee9e2aba3.png" src="../_images/e5c01b7ab7672bc1676dbe78bb67988f20b1e7d4a1d3aba1fd8d831ee9e2aba3.png" style="width: 1080px; height: 360px;" /></a>
+</div>
+</div>
+</section>
+<section id="session-info">
+<h2>Session Info<a class="headerlink" href="#session-info" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sessionInfo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.3 LTS
+
+Matrix products: default
+BLAS/LAPACK: /opt/conda/envs/climate4r/lib/libopenblasp-r0.3.27.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8          LC_NUMERIC=C                 
+ [3] LC_TIME=en_US.UTF-8           LC_COLLATE=en_US.UTF-8       
+ [5] LC_MONETARY=en_US.UTF-8       LC_MESSAGES=en_US.UTF-8      
+ [7] LC_PAPER=en_US.UTF-8          LC_NAME=en_US.UTF-8          
+ [9] LC_ADDRESS=en_US.UTF-8        LC_TELEPHONE=en_US.UTF-8     
+[11] LC_MEASUREMENT=en_US.UTF-8    LC_IDENTIFICATION=en_US.UTF-8
+
+time zone: Etc/UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] lattice_0.22-6      RColorBrewer_1.1-3  magrittr_2.0.3     
+ [4] visualizeR_1.6.4    transformeR_2.2.2   loadeR_1.8.1       
+ [7] climate4R.UDG_0.2.6 loadeR.java_1.1.1   rJava_1.0-11       
+[10] repr_1.1.7         
+
+loaded via a namespace (and not attached):
+ [1] dotCall64_1.1-1         spam_2.10-0             latticeExtra_0.6-30    
+ [4] vctrs_0.6.5             mapplots_1.5.2          tools_4.3.3            
+ [7] bitops_1.0-8            generics_0.1.3          parallel_4.3.3         
+[10] tibble_3.2.1            proxy_0.4-27            fansi_1.0.6            
+[13] SpecsVerification_0.5-3 pkgconfig_2.0.3         KernSmooth_2.23-24     
+[16] data.table_1.15.4       uuid_1.2-1              lifecycle_1.0.4        
+[19] compiler_4.3.3          kohonen_3.0.12          deldir_2.0-4           
+[22] fields_16.2             munsell_0.5.1           akima_0.6-3.4          
+[25] class_7.3-22            htmltools_0.5.8.1       maps_3.4.2             
+[28] RCurl_1.98-1.16         pillar_1.9.0            crayon_1.5.3           
+[31] MASS_7.3-60.0.1         classInt_0.4-10         boot_1.3-31            
+[34] abind_1.4-5             vioplot_0.5.0           padr_0.6.2             
+[37] verification_1.42       tidyselect_1.2.1        digest_0.6.37          
+[40] sf_1.0-16               dplyr_1.1.4             fastmap_1.2.0          
+[43] grid_4.3.3              colorspace_2.1-1        cli_3.6.3              
+[46] base64enc_0.1-3         utf8_1.2.4              e1071_1.7-16           
+[49] sm_2.2-6.0              IRdisplay_1.1           withr_3.0.1            
+[52] scales_1.3.0            sp_2.1-4                IRkernel_1.3.2         
+[55] jpeg_0.1-10             interp_1.1-6            pbdZMQ_0.3-13          
+[58] RcppEigen_0.3.4.0.2     zoo_1.8-12              png_0.1-8              
+[61] pbapply_1.7-2           evaluate_1.0.0          dtw_1.23-1             
+[64] viridisLite_0.4.2       rlang_1.1.4             Rcpp_1.0.13            
+[67] DBI_1.2.3               glue_1.7.0              easyVerification_0.4.5 
+[70] CircStats_0.2-6         jsonlite_1.8.9          R6_2.5.1               
+[73] units_0.8-5            
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./maps_of_change"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../getting_started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting started</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../regional_aggregation/Regional_aggregation_and_visualization.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Regional averaging of climate information</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-in-this-notebook">Contents in this notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">1. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-global-warming-level-analysis-dimension">2. The Global Warming Level analysis dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-for-the-different-gwls">3. Data loading for the different GWLs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading-for-the-historical-reference">4. Data loading for the historical reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-calculation-and-representation">5. Uncertainty Calculation and Representation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-workflow-code-summary">Complete Workflow Code Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#session-info">Session Info</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Maialen Iturbide, Ezequiel Cimadevilla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
