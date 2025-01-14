@@ -1,0 +1,6 @@
+format: jb-book
+root: getting_started
+chapters:
+  - file: maps_of_change/Maps_of_change_under_global-warming-levels.ipynb
+  - file: regional_aggregation/Regional_aggregation_and_visualization.ipynb
+  - file: time-series_of_change/GSAT-change_time-series

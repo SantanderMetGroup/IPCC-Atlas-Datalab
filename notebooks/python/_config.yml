@@ -1,0 +1,8 @@
+title: The IPCC AR6 Interactive Atlas Datalab (Python)
+author: Ezequiel Cimadevilla, Maialen Iturbide
+execute:
+  execute_notebooks: off
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
