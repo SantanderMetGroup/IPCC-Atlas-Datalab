@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -383,7 +383,7 @@
 
 Loading required package: loadeR.java
 
-Java version 22x amd64 by N/A detected
+Java version 20x amd64 by N/A detected
 
 NetCDF Java Library v4.6.0-SNAPSHOT (23 Apr 2015) loaded and ready
 
@@ -393,11 +393,7 @@ climate4R.UDG version 0.2.6 (2023-06-26) is loaded
 
 Please use &#39;citation(&quot;climate4R.UDG&quot;)&#39; to cite this package.
 
-loadeR version 1.8.1 (2023-06-22) is loaded
-
-WARNING: Your current version of loadeR (v1.8.1) is not up-to-date
-
-Get the latest stable version (1.8.2) using &lt;devtools::install_github(c(&#39;SantanderMetGroup/climate4R.UDG&#39;,&#39;SantanderMetGroup/loadeR&#39;))&gt;
+loadeR version 1.8.2 (2024-06-04) is loaded
 
 Please use &#39;citation(&quot;loadeR&quot;)&#39; to cite this package.
 </pre></div>
@@ -518,7 +514,7 @@ Please see &#39;citation(&quot;visualizeR&quot;)&#39; to cite this package.
 <p>To load the data, we first need to determine the path of the file containing the specific data we require. This path can point to either a NetCDF file or a NcML catalog file. The available paths are listed in the <strong>data_inventory.csv</strong> file. We can read this information with function <code class="docutils literal notranslate"><span class="pre">read.csv</span></code> and apply <code class="docutils literal notranslate"><span class="pre">str</span></code> for a quick overview of the content:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../data_inventory.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../../data_inventory.csv&quot;</span><span class="p">)</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">data.paths</span><span class="p">)</span>
 </pre></div>
 </div>

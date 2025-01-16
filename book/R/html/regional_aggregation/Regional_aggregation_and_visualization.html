@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -375,7 +375,68 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using libcurl 8.10.1 with OpenSSL/3.3.2
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: rJava
+
+Loading required package: loadeR.java
+
+Java version 20x amd64 by N/A detected
+
+NetCDF Java Library v4.6.0-SNAPSHOT (23 Apr 2015) loaded and ready
+
+Loading required package: climate4R.UDG
+
+climate4R.UDG version 0.2.6 (2023-06-26) is loaded
+
+Please use &#39;citation(&quot;climate4R.UDG&quot;)&#39; to cite this package.
+
+loadeR version 1.8.2 (2024-06-04) is loaded
+
+Please use &#39;citation(&quot;loadeR&quot;)&#39; to cite this package.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    _______   ____  ___________________  __  ________ 
+   / ___/ /  / /  |/  / __  /_  __/ __/ / / / / __  / 
+  / /  / /  / / /|_/ / /_/ / / / / __/ / /_/ / /_/_/  
+ / /__/ /__/ / /  / / __  / / / / /__ /___  / / \ \ 
+ \___/____/_/_/  /_/_/ /_/ /_/  \___/    /_/\/   \_\ 
+ 
+      github.com/SantanderMetGroup/climate4R
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>transformeR version 2.2.2 (2023-10-26) is loaded
+
+WARNING: Your current version of transformeR (v2.2.2) is not up-to-date
+
+Get the latest stable version (2.2.3) using &lt;devtools::install_github(&#39;SantanderMetGroup/transformeR&#39;)&gt;
+
+Please see &#39;citation(&quot;transformeR&quot;)&#39; to cite this package.
+
+visualizeR version 1.6.4 (2023-10-26) is loaded
+
+Please see &#39;citation(&quot;visualizeR&quot;)&#39; to cite this package.
+
+Please note that rgdal will be retired during October 2023,
+plan transition to sf/stars/terra functions using GDAL and PROJ
+at your earliest convenience.
+See https://r-spatial.org/r/2023/05/15/evolution4.html and https://github.com/r-spatial/evolution
+rgdal: version: 1.6-7, (SVN revision 1203)
+Geospatial Data Abstraction Library extensions to R successfully loaded
+Loaded GDAL runtime: GDAL 3.8.0, released 2023/11/06
+Path to GDAL shared files: 
+ GDAL does not use iconv for recoding strings.
+GDAL binary built with GEOS: TRUE 
+Loaded PROJ runtime: Rel. 9.3.0, September 1st, 2023, [PJ_VERSION: 930]
+Path to PROJ shared files: /home/zequi/.local/share/proj:/home/zequi/miniconda3/share/proj
+PROJ CDN enabled: TRUE
+Linking to sp version:2.1-1
+To mute warnings of possible GDAL/OSR exportToProj4() degradation,
+use options(&quot;rgdal_show_exportToProj4_warnings&quot;=&quot;none&quot;) before loading sp or rgdal.
+
+geoprocessoR version 0.2.2 (2023-06-22) is loaded
+
+Please see &#39;citation(&quot;geoprocessoR&quot;)&#39; to cite this package.
+
+Loading required package: sp
 </pre></div>
 </div>
 </div>
@@ -386,7 +447,7 @@
 <p>The aim of this notebook is to illustrate the operations that can be carried out in <em>climate4R</em> to synthesize climate information through regionalized statistics. These operations can be applied to any <em>climate4R</em> (C4R) grid, containing any type of information. Here, we will demonstrate this using a simple data loading operation to obtain the target C4R grid. For more detailed explanations on data loading, please refer to other notebooks (e.g., <code class="docutils literal notranslate"><span class="pre">getting</span> <span class="pre">started</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../data_inventory.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data.paths</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../../../data_inventory.csv&quot;</span><span class="p">)</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">data.paths</span><span class="p">)</span>
 </pre></div>
 </div>
