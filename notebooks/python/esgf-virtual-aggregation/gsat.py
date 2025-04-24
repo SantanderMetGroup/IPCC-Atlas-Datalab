@@ -80,7 +80,6 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
         
         ssp585_spatial_mean.append(spatial_mean)
 
-#    return historical_spatial_mean_1995_2014, historical_spatial_mean_1850_1900, hist_spatial_mean, ssp126_spatial_mean, ssp245_spatial_mean, ssp370_spatial_mean, ssp585_spatial_mean
     # concat
     mean_hist_1995_2014 = xarray.DataArray(
         data=[x.item() for x in historical_spatial_mean_1995_2014],
@@ -88,6 +87,11 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
     mean_hist_1850_1900 = xarray.DataArray(
         data=[x.item() for x in historical_spatial_mean_1850_1900],
         coords={"member": [x.attrs["model_run"] for x in historical_dss]})
+    mean_hist = xarray.concat(
+        hist_spatial_mean,
+        dim=xarray.DataArray([x.attrs["model_run"] for x in historical_dss], dims="member"),
+        coords="minimal",
+        compat="override")
     mean_ssp126 = xarray.concat(
         ssp126_spatial_mean,
         dim=xarray.DataArray([x.attrs["model_run"] for x in ssp126_dss], dims="member"),
@@ -109,48 +113,108 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
         coords="minimal",
         compat="override")
 
-    return mean_hist_1995_2014, mean_hist_1850_1900, hist_spatial_mean, mean_ssp126, mean_ssp245, mean_ssp370, mean_ssp585
+    return mean_hist_1995_2014, mean_hist_1850_1900, mean_hist, mean_ssp126, mean_ssp245, mean_ssp370, mean_ssp585
 
-    # mean_hist_1995_2014_YE = (mean_hist - mean_hist_1995_2014).resample(time="YE").mean()
-    # mean_ssp126_1995_2014_YE = (mean_ssp126 - mean_hist_1995_2014).resample(time="YE").mean()
-    # mean_ssp245_1995_2014_YE = (mean_ssp245 - mean_hist_1995_2014).resample(time="YE").mean()
-    # mean_ssp370_1995_2014_YE = (mean_ssp370 - mean_hist_1995_2014).resample(time="YE").mean()
-    # mean_ssp585_1995_2014_YE = (mean_ssp585 - mean_hist_1995_2014).resample(time="YE").mean()
+
+def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss):
+    # reference periods
+    historical_spatial_mean_1995_2014 = []
+    historical_spatial_mean_1850_1900 = []
+    for ds in historical_dss:
+        print(f"Model_run: {ds.attrs['model_run']}")
+        if isinstance(ds["time"][0].item(), cftime.Datetime360Day):
+            mean_1995_2014 = ds["tas"].chunk({"time": 100}).sel(time=slice("19950101", "20141230")).mean(["time", "lat", "lon"]).compute(
+                num_workers=nw, scheduler="processes")
+            mean_1850_1900 = ds["tas"].chunk({"time": 100}).sel(time=slice("18500101", "19001230")).mean(["time", "lat", "lon"]).compute(
+                num_workers=nw, scheduler="processes")
+        else:
+            mean_1995_2014 = ds["tas"].chunk({"time": 100}).sel(time=slice("19950101", "20141231")).mean(["time", "lat", "lon"]).compute(
+                num_workers=nw, scheduler="processes")
+            mean_1850_1900 = ds["tas"].chunk({"time": 100}).sel(time=slice("18500101", "19001231")).mean(["time", "lat", "lon"]).compute(
+                num_workers=nw, scheduler="processes")
+        historical_spatial_mean_1995_2014.append(mean_1995_2014)
+        historical_spatial_mean_1850_1900.append(mean_1850_1900)
+
+    # means
+    hist_spatial_mean = []
+    for ds in historical_dss:
+        spatial_mean = ds["tas"].chunk({"time": 100}).sel(time=slice("19500101", None)).mean(["lat", "lon"]).compute(
+            num_workers=nw, scheduler="processes")
+        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+        hist_spatial_mean.append(spatial_mean)
+    ssp126_spatial_mean = []
+    for ds in ssp126_dss:
+        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+            num_workers=nw, scheduler="processes")
+        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+        ssp126_spatial_mean.append(spatial_mean)
+    ssp245_spatial_mean = []
+    for ds in ssp245_dss:
+        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+            num_workers=nw, scheduler="processes")
+        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+        ssp245_spatial_mean.append(spatial_mean)
+    ssp370_spatial_mean = []
+    for ds in ssp370_dss:
+        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+            num_workers=nw, scheduler="processes")
+        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+        ssp370_spatial_mean.append(spatial_mean)
+    ssp585_spatial_mean = []
+    for ds in ssp585_dss:
+        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+            num_workers=nw, scheduler="processes")
+        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
     
-    # mean_hist_1850_1900_YE = (mean_hist - mean_hist_1850_1900).resample(time="YE").mean()
-    # mean_ssp126_1850_1900_YE = (mean_ssp126 - mean_hist_1850_1900).resample(time="YE").mean()
-    # mean_ssp245_1850_1900_YE = (mean_ssp245 - mean_hist_1850_1900).resample(time="YE").mean()
-    # mean_ssp370_1850_1900_YE = (mean_ssp370 - mean_hist_1850_1900).resample(time="YE").mean()
-    # mean_ssp585_1850_1900_YE = (mean_ssp585 - mean_hist_1850_1900).resample(time="YE").mean()
-    
-    # q_hist_1995_2014_YE = (mean_spatial_hist - mean_hist_1995_2014).resample(time="YE").mean().quantile([.05, .95], dim=["member"])
-    # q_ssp126_1995_2014_YE = (mean_spatial_ssp126 - mean_hist_1995_2014).resample(time="YE").mean().quantile([.05, .95], dim=["member"])
-    # q_ssp245_1995_2014_YE = (mean_spatial_ssp245 - mean_hist_1995_2014).resample(time="YE").mean().quantile([.05, .95], dim=["member"])
-    # q_ssp370_1995_2014_YE = (mean_spatial_ssp370 - mean_hist_1995_2014).resample(time="YE").mean().quantile([.05, .95], dim=["member"])
-    # q_ssp585_1995_2014_YE = (mean_spatial_ssp585 - mean_hist_1995_2014).resample(time="YE").mean().quantile([.05, .95], dim=["member"])
+        ref = np.datetime64("2015-01-01T12:00:00").astype("datetime64[ns]").astype(int)
+        spatial_mean["time"] = spatial_mean["time"] + (ref - spatial_mean["time"][0].item())
+        
+        ssp585_spatial_mean.append(spatial_mean)
 
-    # mean_scenarios_1995_2014 = xarray.concat([
-    #     mean_ssp126_1995_2014_YE,
-    #     mean_ssp245_1995_2014_YE,
-    #     mean_ssp370_1995_2014_YE,
-    #     mean_ssp585_1995_2014_YE],
-    #     dim=xarray.Variable(["scenario"], ["ssp126", "ssp245", "ssp370", "ssp585"]))
+    # concat
+    mean_hist_1995_2014 = xarray.DataArray(
+        data=[x.item() for x in historical_spatial_mean_1995_2014],
+        coords={"member": [x.attrs["model_run"] for x in historical_dss]})
+    mean_hist_1850_1900 = xarray.DataArray(
+        data=[x.item() for x in historical_spatial_mean_1850_1900],
+        coords={"member": [x.attrs["model_run"] for x in historical_dss]})
+    mean_hist = xarray.concat(
+        hist_spatial_mean,
+        dim=xarray.DataArray([x.attrs["model_run"] for x in historical_dss], dims="member"),
+        coords="minimal",
+        compat="override")
+    mean_ssp126 = xarray.concat(
+        ssp126_spatial_mean,
+        dim=xarray.DataArray([x.attrs["model_run"] for x in ssp126_dss], dims="member"),
+        coords="minimal",
+        compat="override")
+    mean_ssp245 = xarray.concat(
+        ssp245_spatial_mean,
+        dim=xarray.DataArray([x.attrs["model_run"] for x in ssp245_dss], dims="member"),
+        coords="minimal",
+        compat="override")
+    mean_ssp370 = xarray.concat(
+        ssp370_spatial_mean,
+        dim=xarray.DataArray([x.attrs["model_run"] for x in ssp370_dss], dims="member"),
+        coords="minimal",
+        compat="override")
+    mean_ssp585 = xarray.concat(
+        ssp585_spatial_mean,
+        dim=xarray.DataArray([x.attrs["model_run"] for x in ssp585_dss], dims="member"),
+        coords="minimal",
+        compat="override")
 
-    # mean_scenarios_1850_1900 = xarray.concat([
-    # mean_ssp126_1850_1900_YE,
-    # mean_ssp245_1850_1900_YE,
-    # mean_ssp370_1850_1900_YE,
-    # mean_ssp585_1850_1900_YE],
-    # dim=xarray.Variable(["scenario"], ["ssp126", "ssp245", "ssp370", "ssp585"]))
-
-    # q_scenarios_1995_2014 = xarray.concat([
-    #     q_ssp126_1995_2014_YE,
-    #     q_ssp245_1995_2014_YE,
-    #     q_ssp370_1995_2014_YE,
-    #     q_ssp585_1995_2014_YE],
-    #     dim=xarray.Variable(["scenario"], ["ssp126", "ssp245", "ssp370", "ssp585"]))
-
-    # return mean_hist_1995_2014_YE, mean_hist_1850_1900_YE, q_hist_1995_2014_YE, mean_scenarios_1995_2014, mean_scenarios_1850_1900, q_scenarios_1995_2014
+    return mean_hist_1995_2014, mean_hist_1850_1900, mean_hist, mean_ssp126, mean_ssp245, mean_ssp370, mean_ssp585
 
 
 def measure(name, nworkers, runs, *args):
