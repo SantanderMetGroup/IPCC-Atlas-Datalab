@@ -15,16 +15,16 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
     historical_spatial_mean_1850_1900 = []
     for ds in historical_dss:
         print(f"Model_run: {ds.attrs['model_run']}")
-        weights = np.cos(np.deg2rad(ds["lat"]))
-        if isinstance(ds["time"][0].item(), cftime.Datetime360Day):
-            mean_1995_2014 = ds["tas"].chunk({"time": 100}).sel(time=slice("19950101", "20141230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+        weights = np.cos(np.deg2rad(ds.coords["lat"]))
+        if isinstance(ds.coords["time"][0].item(), cftime.Datetime360Day):
+            mean_1995_2014 = ds.sel(time=slice("19950101", "20141230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds["tas"].chunk({"time": 100}).sel(time=slice("18500101", "19001230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+            mean_1850_1900 = ds.sel(time=slice("18500101", "19001230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
         else:
-            mean_1995_2014 = ds["tas"].chunk({"time": 100}).sel(time=slice("19950101", "20141231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+            mean_1995_2014 = ds.sel(time=slice("19950101", "20141231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds["tas"].chunk({"time": 100}).sel(time=slice("18500101", "19001231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+            mean_1850_1900 = ds.sel(time=slice("18500101", "19001231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
         historical_spatial_mean_1995_2014.append(mean_1995_2014)
         historical_spatial_mean_1850_1900.append(mean_1850_1900)
@@ -32,8 +32,8 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
     # means
     hist_spatial_mean = []
     for ds in historical_dss:
-        weights = np.cos(np.deg2rad(ds["lat"]))
-        spatial_mean = ds["tas"].chunk({"time": 100}).sel(time=slice("19500101", None)).weighted(weights).mean(["lat", "lon"]).compute(
+        weights = np.cos(np.deg2rad(ds.coords["lat"]))
+        spatial_mean = ds.sel(time=slice("19500101", None)).weighted(weights).mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -41,8 +41,8 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
         hist_spatial_mean.append(spatial_mean)
     ssp126_spatial_mean = []
     for ds in ssp126_dss:
-        weights = np.cos(np.deg2rad(ds["lat"]))
-        spatial_mean = ds["tas"].chunk({"time": 100}).weighted(weights).mean(["lat", "lon"]).compute(
+        weights = np.cos(np.deg2rad(ds.coords["lat"]))
+        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -50,8 +50,8 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
         ssp126_spatial_mean.append(spatial_mean)
     ssp245_spatial_mean = []
     for ds in ssp245_dss:
-        weights = np.cos(np.deg2rad(ds["lat"]))
-        spatial_mean = ds["tas"].chunk({"time": 100}).weighted(weights).mean(["lat", "lon"]).compute(
+        weights = np.cos(np.deg2rad(ds.coords["lat"]))
+        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -59,8 +59,8 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
         ssp245_spatial_mean.append(spatial_mean)
     ssp370_spatial_mean = []
     for ds in ssp370_dss:
-        weights = np.cos(np.deg2rad(ds["lat"]))
-        spatial_mean = ds["tas"].chunk({"time": 100}).weighted(weights).mean(["lat", "lon"]).compute(
+        weights = np.cos(np.deg2rad(ds.coords["lat"]))
+        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -68,8 +68,8 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
         ssp370_spatial_mean.append(spatial_mean)
     ssp585_spatial_mean = []
     for ds in ssp585_dss:
-        weights = np.cos(np.deg2rad(ds["lat"]))
-        spatial_mean = ds["tas"].chunk({"time": 100}).weighted(weights).mean(["lat", "lon"]).compute(
+        weights = np.cos(np.deg2rad(ds.coords["lat"]))
+        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -82,10 +82,10 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
 
     # concat
     mean_hist_1995_2014 = xarray.DataArray(
-        data=[x.item() for x in historical_spatial_mean_1995_2014],
+        data=[x["tas"].item() for x in historical_spatial_mean_1995_2014],
         coords={"member": [x.attrs["model_run"] for x in historical_dss]})
     mean_hist_1850_1900 = xarray.DataArray(
-        data=[x.item() for x in historical_spatial_mean_1850_1900],
+        data=[x["tas"].item() for x in historical_spatial_mean_1850_1900],
         coords={"member": [x.attrs["model_run"] for x in historical_dss]})
     mean_hist = xarray.concat(
         hist_spatial_mean,
@@ -122,15 +122,15 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
     historical_spatial_mean_1850_1900 = []
     for ds in historical_dss:
         print(f"Model_run: {ds.attrs['model_run']}")
-        if isinstance(ds["time"][0].item(), cftime.Datetime360Day):
-            mean_1995_2014 = ds["tas"].chunk({"time": 100}).sel(time=slice("19950101", "20141230")).mean(["time", "lat", "lon"]).compute(
+        if isinstance(ds.coords["time"][0].item(), cftime.Datetime360Day):
+            mean_1995_2014 = ds.sel(time=slice("19950101", "20141230")).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds["tas"].chunk({"time": 100}).sel(time=slice("18500101", "19001230")).mean(["time", "lat", "lon"]).compute(
+            mean_1850_1900 = ds.sel(time=slice("18500101", "19001230")).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
         else:
-            mean_1995_2014 = ds["tas"].chunk({"time": 100}).sel(time=slice("19950101", "20141231")).mean(["time", "lat", "lon"]).compute(
+            mean_1995_2014 = ds.sel(time=slice("19950101", "20141231")).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds["tas"].chunk({"time": 100}).sel(time=slice("18500101", "19001231")).mean(["time", "lat", "lon"]).compute(
+            mean_1850_1900 = ds.sel(time=slice("18500101", "19001231")).mean(["time", "lat", "lon"]).compute(
                 num_workers=nw, scheduler="processes")
         historical_spatial_mean_1995_2014.append(mean_1995_2014)
         historical_spatial_mean_1850_1900.append(mean_1850_1900)
@@ -138,7 +138,7 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
     # means
     hist_spatial_mean = []
     for ds in historical_dss:
-        spatial_mean = ds["tas"].chunk({"time": 100}).sel(time=slice("19500101", None)).mean(["lat", "lon"]).compute(
+        spatial_mean = ds.sel(time=slice("19500101", None)).mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -146,7 +146,7 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
         hist_spatial_mean.append(spatial_mean)
     ssp126_spatial_mean = []
     for ds in ssp126_dss:
-        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+        spatial_mean = ds.mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -154,7 +154,7 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
         ssp126_spatial_mean.append(spatial_mean)
     ssp245_spatial_mean = []
     for ds in ssp245_dss:
-        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+        spatial_mean = ds.mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -162,7 +162,7 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
         ssp245_spatial_mean.append(spatial_mean)
     ssp370_spatial_mean = []
     for ds in ssp370_dss:
-        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+        spatial_mean = ds.mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -170,7 +170,7 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
         ssp370_spatial_mean.append(spatial_mean)
     ssp585_spatial_mean = []
     for ds in ssp585_dss:
-        spatial_mean = ds["tas"].chunk({"time": 100}).mean(["lat", "lon"]).compute(
+        spatial_mean = ds.mean(["lat", "lon"]).compute(
             num_workers=nw, scheduler="processes")
         spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
         spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
@@ -183,10 +183,10 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
 
     # concat
     mean_hist_1995_2014 = xarray.DataArray(
-        data=[x.item() for x in historical_spatial_mean_1995_2014],
+        data=[x["tas"].item() for x in historical_spatial_mean_1995_2014],
         coords={"member": [x.attrs["model_run"] for x in historical_dss]})
     mean_hist_1850_1900 = xarray.DataArray(
-        data=[x.item() for x in historical_spatial_mean_1850_1900],
+        data=[x["tas"].item() for x in historical_spatial_mean_1850_1900],
         coords={"member": [x.attrs["model_run"] for x in historical_dss]})
     mean_hist = xarray.concat(
         hist_spatial_mean,
