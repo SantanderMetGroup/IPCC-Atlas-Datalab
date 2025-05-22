@@ -14,71 +14,112 @@ def weighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_dss)
     historical_spatial_mean_1995_2014 = []
     historical_spatial_mean_1850_1900 = []
     for ds in historical_dss:
-        print(f"Model_run: {ds.attrs['model_run']}")
-        weights = np.cos(np.deg2rad(ds.coords["lat"]))
-        if isinstance(ds.coords["time"][0].item(), cftime.Datetime360Day):
-            mean_1995_2014 = ds.sel(time=slice("19950101", "20141230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds.sel(time=slice("18500101", "19001230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-        else:
-            mean_1995_2014 = ds.sel(time=slice("19950101", "20141231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds.sel(time=slice("18500101", "19001231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-        historical_spatial_mean_1995_2014.append(mean_1995_2014)
-        historical_spatial_mean_1850_1900.append(mean_1850_1900)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                weights = np.cos(np.deg2rad(ds.coords["lat"]))
+                if isinstance(ds.coords["time"][0].item(), cftime.Datetime360Day):
+                    mean_1995_2014 = ds.sel(time=slice("19950101", "20141230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                    mean_1850_1900 = ds.sel(time=slice("18500101", "19001230")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                else:
+                    mean_1995_2014 = ds.sel(time=slice("19950101", "20141231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                    mean_1850_1900 = ds.sel(time=slice("18500101", "19001231")).weighted(weights).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                historical_spatial_mean_1995_2014.append(mean_1995_2014)
+                historical_spatial_mean_1850_1900.append(mean_1850_1900)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
 
     # means
     hist_spatial_mean = []
     for ds in historical_dss:
-        weights = np.cos(np.deg2rad(ds.coords["lat"]))
-        spatial_mean = ds.sel(time=slice("19500101", None)).weighted(weights).mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        hist_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                weights = np.cos(np.deg2rad(ds.coords["lat"]))
+                spatial_mean = ds.sel(time=slice("19500101", None)).weighted(weights).mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                hist_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp126_spatial_mean = []
     for ds in ssp126_dss:
-        weights = np.cos(np.deg2rad(ds.coords["lat"]))
-        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        ssp126_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                weights = np.cos(np.deg2rad(ds.coords["lat"]))
+                spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                ssp126_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp245_spatial_mean = []
     for ds in ssp245_dss:
-        weights = np.cos(np.deg2rad(ds.coords["lat"]))
-        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        ssp245_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                weights = np.cos(np.deg2rad(ds.coords["lat"]))
+                spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                ssp245_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp370_spatial_mean = []
     for ds in ssp370_dss:
-        weights = np.cos(np.deg2rad(ds.coords["lat"]))
-        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        ssp370_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                weights = np.cos(np.deg2rad(ds.coords["lat"]))
+                spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                ssp370_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp585_spatial_mean = []
     for ds in ssp585_dss:
-        weights = np.cos(np.deg2rad(ds.coords["lat"]))
-        spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-    
-        ref = np.datetime64("2015-01-01T12:00:00").astype("datetime64[ns]").astype(int)
-        spatial_mean["time"] = spatial_mean["time"] + (ref - spatial_mean["time"][0].item())
-        
-        ssp585_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                weights = np.cos(np.deg2rad(ds.coords["lat"]))
+                spatial_mean = ds.weighted(weights).mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+            
+                ref = np.datetime64("2015-01-01T12:00:00").astype("datetime64[ns]").astype(int)
+                spatial_mean["time"] = spatial_mean["time"] + (ref - spatial_mean["time"][0].item())
+                
+                ssp585_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
 
     # concat
     mean_hist_1995_2014 = xarray.DataArray(
@@ -121,65 +162,106 @@ def unweighted(nw, historical_dss, ssp126_dss, ssp245_dss, ssp370_dss, ssp585_ds
     historical_spatial_mean_1995_2014 = []
     historical_spatial_mean_1850_1900 = []
     for ds in historical_dss:
-        print(f"Model_run: {ds.attrs['model_run']}")
-        if isinstance(ds.coords["time"][0].item(), cftime.Datetime360Day):
-            mean_1995_2014 = ds.sel(time=slice("19950101", "20141230")).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds.sel(time=slice("18500101", "19001230")).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-        else:
-            mean_1995_2014 = ds.sel(time=slice("19950101", "20141231")).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-            mean_1850_1900 = ds.sel(time=slice("18500101", "19001231")).mean(["time", "lat", "lon"]).compute(
-                num_workers=nw, scheduler="processes")
-        historical_spatial_mean_1995_2014.append(mean_1995_2014)
-        historical_spatial_mean_1850_1900.append(mean_1850_1900)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                if isinstance(ds.coords["time"][0].item(), cftime.Datetime360Day):
+                    mean_1995_2014 = ds.sel(time=slice("19950101", "20141230")).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                    mean_1850_1900 = ds.sel(time=slice("18500101", "19001230")).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                else:
+                    mean_1995_2014 = ds.sel(time=slice("19950101", "20141231")).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                    mean_1850_1900 = ds.sel(time=slice("18500101", "19001231")).mean(["time", "lat", "lon"]).compute(
+                        num_workers=nw, scheduler="processes")
+                historical_spatial_mean_1995_2014.append(mean_1995_2014)
+                historical_spatial_mean_1850_1900.append(mean_1850_1900)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
 
     # means
     hist_spatial_mean = []
     for ds in historical_dss:
-        spatial_mean = ds.sel(time=slice("19500101", None)).mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        hist_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                spatial_mean = ds.sel(time=slice("19500101", None)).mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                hist_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp126_spatial_mean = []
     for ds in ssp126_dss:
-        spatial_mean = ds.mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        ssp126_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                spatial_mean = ds.mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                ssp126_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp245_spatial_mean = []
     for ds in ssp245_dss:
-        spatial_mean = ds.mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        ssp245_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                spatial_mean = ds.mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                ssp245_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp370_spatial_mean = []
     for ds in ssp370_dss:
-        spatial_mean = ds.mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-        ssp370_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                spatial_mean = ds.mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+                ssp370_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
     ssp585_spatial_mean = []
     for ds in ssp585_dss:
-        spatial_mean = ds.mean(["lat", "lon"]).compute(
-            num_workers=nw, scheduler="processes")
-        spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
-        spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
-        spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
-    
-        ref = np.datetime64("2015-01-01T12:00:00").astype("datetime64[ns]").astype(int)
-        spatial_mean["time"] = spatial_mean["time"] + (ref - spatial_mean["time"][0].item())
-        
-        ssp585_spatial_mean.append(spatial_mean)
+        while True:
+            try:
+                print(f"Model_run: {ds.attrs['model_run']}")
+                spatial_mean = ds.mean(["lat", "lon"]).compute(
+                    num_workers=nw, scheduler="processes")
+                spatial_mean = spatial_mean.convert_calendar("gregorian", align_on="year")
+                spatial_mean = spatial_mean.isel(time=~pd.to_datetime(spatial_mean["time"].values, errors="coerce").isna())
+                spatial_mean["time"] = spatial_mean["time"].astype("datetime64[ns]")
+            
+                ref = np.datetime64("2015-01-01T12:00:00").astype("datetime64[ns]").astype(int)
+                spatial_mean["time"] = spatial_mean["time"] + (ref - spatial_mean["time"][0].item())
+                
+                ssp585_spatial_mean.append(spatial_mean)
+                break
+            except Exception as e:
+                print(f"An error occurred: {e}")
+                print("Retrying...")
 
     # concat
     mean_hist_1995_2014 = xarray.DataArray(
