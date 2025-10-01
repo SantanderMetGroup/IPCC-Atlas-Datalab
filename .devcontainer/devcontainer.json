@@ -1,5 +1,4 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
   "postCreateCommand": {
     "Interactive Atlas DataLab environment": "mamba env update -n base -f .binder/environment.yml"
   },
