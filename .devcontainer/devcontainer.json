@@ -1,7 +1,6 @@
 {
   "postCreateCommand": {
-    "Mamba": "conda install -c conda-forge -y -n base mamba",
-    "Interactive Atlas DataLab environment": "mamba env update -n base -f .binder/environment.yml"
+    "Interactive Atlas DataLab environment": ["bash", "-c", "conda install -c conda-forge -y -n base mamba && mamba env update -n base -f .binder/environment.yml"]
   },
   "features": {}
 }
